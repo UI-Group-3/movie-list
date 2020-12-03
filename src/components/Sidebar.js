@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import Searchbar from './Searchbar'
 import Icon from './Icon'
+import SiderbarButton from './SidebarButton'
 
 function Sidebar() {
     return (
@@ -13,6 +14,7 @@ function Sidebar() {
                     <Item>Liked List</Item>
                     <Item>Blocked List</Item>
             </List>
+            <SiderbarButton/>
         </Side>
     )
 }
