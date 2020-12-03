@@ -15,19 +15,14 @@ const Category = () => {
     useEffect(() => {
         axios.get(GENRES_API)
             .then(res => {
-                // console.log(res)
-                // console.log(res.data.genres);
                 dispatch(getMovieGenres(res.data.genres))
             })
             .catch(err => {
-                // console.log(err)  
+                
             })
     }, [dispatch])
 
     const genres_lists = useSelector(selectCategories);
-    // console.log(genres_lists);
-
-
 
     return (
 
