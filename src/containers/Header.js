@@ -1,9 +1,15 @@
 import React from 'react';
+import Navbar from '../components/Navbar';
+import Sidebar from '../components/Sidebar';
+import SidebarButton from '../components/SidebarButton';
 
 const Header = () => {
     return (
-        <h1>This is Header</h1>
-    ) 
+        <div>
+            <Navbar/>
+            <SidebarButton/>
+        </div>
+    )
 };
 
 export default Header;
