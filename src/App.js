@@ -1,4 +1,3 @@
-import './App.css';
 import React from 'react';
 import Category from './containers/Category';
 import Header from './containers/Header';
@@ -13,5 +12,4 @@ const App = () => {
     </div>
   )
 }
-
 export default App;
