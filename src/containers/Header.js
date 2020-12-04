@@ -2,7 +2,6 @@ import React from 'react';
 import {useMediaQuery} from 'react-responsive'
 import Navbar from '../components/Navbar';
 import Sidebar from '../components/Sidebar';
-import SidebarButton from '../components/SidebarButton';
 
 const Header = () => {
     const bIsDesktop = useMediaQuery({

@@ -1,4 +1,4 @@
-import { GET_MOVIE_GENRES, SET_CLICK_VALUE,MOUSE_ENTER ,MOUSE_LEAVE,CLICK_LIKED} from './actionConstants';
+import { GET_MOVIE_GENRES, SET_CLICK_VALUE, MOUSE_ENTER, MOUSE_LEAVE, CLICK_LIKED, GET_SIDEBAR_VALUE} from './actionConstants';
 
 
 export const mouseEnter = () => ({
@@ -13,7 +13,12 @@ export const clickLiked = () => ({
     type: CLICK_LIKED
 })
 
-
+export const getSidebarStatus = (val)=>({
+    type: GET_SIDEBAR_VALUE,
+    payload: {
+        val
+    }
+})
 
 
 

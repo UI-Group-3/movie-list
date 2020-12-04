@@ -1,26 +1,49 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
 import Searchbar from './Searchbar'
 import Icon from './Icon'
+import { selectSidebar } from '../redux/selectors'
+import { getSidebarStatus } from '../redux/actionCreators'
+import { useDispatch, useSelector } from 'react-redux';
+
 
 function Sidebar() {
+    // const opened = useSelector(selectSidebar);
+    // const dispatch = useDispatch();
+    const opened = useSelector(selectSidebar);
+    const dispatch = useDispatch();
     return (
-        <Side>
-            <Icon />
-            <Searchbar />
-            <List>
-                <Item>Movie List</Item>
-                <Item>Liked List</Item>
-                <Item>Blocked List</Item>
-            </List>
-            <Button>☰</Button>
-        </Side>
+        <div>
+            <Side className={opened ? "show" : "hide"}>
+                <Icon />
+                <Searchbar />
+                <List>
+                    <Item>Movie List</Item>
+                    <Item>Liked List</Item>
+                    <Item>Blocked List</Item>
+                </List>
+            </Side>
+            <Button onClick={()=>dispatch(getSidebarStatus(opened))}>☰</Button>
+        </div>
     )
 }
 
+const showAnim = keyframes`
+    0% {transform: translate(-256px, 0)}
+    100% {
+        transform: translate(0, 0);
+        left: 0;
+    }
+`
+
+const hideAnim = keyframes`
+    0% {transform: translate(0, 0)}
+    100% {transform: translate(-256px, 0)}
+`
+
 const Side = styled.div`
     margin: 0;
-    padding: 0 8px;
+    padding: 0;
     width: 256px;
     background-color: #f0f3f5;
     position: fixed;
@@ -31,6 +54,15 @@ const Side = styled.div`
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    -webkit-animation-fill-mode: forwards;
+    &.show{
+        animation-name: ${showAnim};
+    }
+    &.hide{
+        animation-name: ${hideAnim};
+    }
 `
 
 const List = styled.ul`
