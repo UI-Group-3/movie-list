@@ -12,6 +12,13 @@ export const clickLiked = () => ({
     type: actionTypes.CLICK_LIKED
 })
 
+export const getMovieList = (data) => ({
+    type:actionTypes.GET_MOVIE_LISTS,
+    payload: {
+        data
+    }
+})
+
 export const clickSort = (id) =>({
     type: actionTypes.CLICK_SORT,
     id

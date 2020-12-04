@@ -8,8 +8,8 @@ const MemoCategoryItem = memo(({ genres_list }) => {
     const { name, id, isClicked } = genres_list;
     return (
 
-        <CategoryLabel className={`${isClicked ? "active" : ''}`}>
-            <CategoryInput name="genres" onClick={() => { dispatch(setClickValue(id)) }} /> {name}
+        <CategoryLabel className={`${isClicked ? "active" : 'activeHover'}`}>
+            <CategoryInput name="genres" onClick={() => {dispatch(setClickValue(id))}}/> {name}
         </CategoryLabel>
 
     )

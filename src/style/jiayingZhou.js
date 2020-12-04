@@ -21,10 +21,11 @@ export const CategoryLabel = styled.label`
         background: #4b8ccb;
         color: #fff;
     }
-    &:hover{
-        background:#eee
-    }  
-     
+    &.activeHover{
+        &:hover{
+            background:#eee
+        }   
+    }
 `;
 
 export const CategoryInput = styled.input`
