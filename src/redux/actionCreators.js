@@ -1,6 +1,5 @@
 import * as actionTypes from './actionConstants';
 
-
 export const mouseEnter = () => ({
     type: actionTypes.MOUSE_ENTER
 });
@@ -19,6 +18,13 @@ export const getMovieList = (data) => ({
         data
     }
 })
+
+export const clickSort = (id) =>({
+    type: actionTypes.CLICK_SORT,
+    id
+
+})
+
 
 
 

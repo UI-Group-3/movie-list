@@ -7,6 +7,7 @@ import Sort from '../components/Sort';
 import ListItemBottom from '../components/ListItemBottom'
 import * as actionCreators from '../redux/actionCreators'
 import { MOVIE_LIST_API } from '../redux/actionConstants'
+import Pagination from '../components/Pagination'
 
 class List extends Component {
 
@@ -28,7 +29,7 @@ class List extends Component {
         const { isLiked, handleClickLiked } = this.props
         if (mouseIn) {
             return (
-                <ListItemBottom handleClickLiked={handleClickLiked} isLiked={isLiked}></ListItemBottom>
+                <ListItemBottom handleClickLiked={handleClickLiked} isLiked={isLiked} ></ListItemBottom>
             )
         }
         else {
@@ -36,21 +37,16 @@ class List extends Component {
         }
     }
 
-    render() {
-        const { mouseIn, handleMouseEnter, handleMouseLeave, sortList } = this.props;
-        
+    render() {        
+        const { mouseIn, handleMouseEnter, handleMouseLeave, sortBy, handleClickSort } = this.props;
         return (
             <ListWrapper>
-                <Sort sortList={sortList}></Sort>
-                {
-                        <ListItem onMouseEnter={handleMouseEnter}
-                            onMouseLeave={handleMouseLeave} >
-                            {this.getItemBottom(mouseIn)}
-                        </ListItem>
-
-                }
-
-
+                <Sort sortBy={sortBy} handleClickSort={handleClickSort} ></Sort>
+                <Pagination ></Pagination>
+                    <ListItem onMouseEnter={handleMouseEnter}
+                        onMouseLeave={handleMouseLeave} >
+                        {this.getItemBottom(mouseIn)}
+                    </ListItem>
             </ListWrapper>
         )
     }
@@ -60,8 +56,9 @@ const mapStateToProps = (state) => {
     return {
         mouseIn: state.listState.mouseIn,
         isLiked: state.listState.isLiked,
-        sortList: state.listState.sortList,
-        movieLists: state.listState.movieLists
+        movieLists: state.listState.movieLists,
+        sortBy: state.listState.sortBy,
+        isSort: state.listState.isSort
     }
 }
 
@@ -77,7 +74,10 @@ const mapDispatchToProps = (dispatch) => {
             dispatch(actionCreators.clickLiked());
         },
         handleFecthMovieList(data) {
-            dispatch(actionCreators.getMovieList(data));
+                    dispatch(actionCreators.getMovieList(data));
+        },
+        handleClickSort(id) {
+            dispatch(actionCreators.clickSort(id));
         }
 
     }

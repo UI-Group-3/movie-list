@@ -19,7 +19,7 @@ const Category = () => {
                 
             })
             .catch(err => {
-                
+
             })
     }, [dispatch])
 

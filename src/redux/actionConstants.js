@@ -1,6 +1,7 @@
 export const MOUSE_ENTER = 'MOUSE_ENTER';
 export const MOUSE_LEAVE = 'MOUSE_LEAVE';
 export const CLICK_LIKED = 'CLICK_LIKED';
+export const CLICK_SORT = 'CLICK_SORT';
 
 export const GET_MOVIE_GENRES = 'get_movie_genres';
 export const GET_MOVIE_LISTS = 'get_movie_lists';
