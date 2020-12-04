@@ -2,7 +2,8 @@ import * as actionTypes from '../actionConstants';
 const initialState = {
     mouseIn: false,
     isLiked: false,
-    sortList:["Sort By Name","Sort By Time","Sort By Rating"]
+    sortList:["Sort By Name","Sort By Time","Sort By Rating"],
+    movieLists: []
 };
 
 const listsState = (state = initialState, action) => {
@@ -22,8 +23,17 @@ const listsState = (state = initialState, action) => {
                 ...state,
                 isLiked: !state.isLiked,
             };
+        case actionTypes.GET_MOVIE_LISTS: {
+            return {
+                ...state,
+                movieLists: [...state.movieLists,
+                    ...action.payload.data]
+            }
+        }
+
+        default: 
+            return state;
     }
-    return state;
 };
 
 export default listsState;
