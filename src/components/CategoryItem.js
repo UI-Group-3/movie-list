@@ -5,11 +5,11 @@ import { setClickValue } from '../redux/actionCreators'
 
 const MemoCategoryItem = memo(({ genres_list }) => {
     const dispatch = useDispatch();
-    const { name, id, isClicked } = genres_list; 
+    const { name, id, isClicked } = genres_list;
     return (
 
         <CategoryLabel className={`${isClicked ? "active" : ''}`}>
-            <CategoryInput name="genres" onClick={() => {dispatch(setClickValue(id))}}/> {name}
+            <CategoryInput name="genres" onClick={() => { dispatch(setClickValue(id)) }} /> {name}
         </CategoryLabel>
 
     )

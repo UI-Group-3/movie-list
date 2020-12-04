@@ -18,7 +18,7 @@ const Category = () => {
                 dispatch(getMovieGenres(res.data.genres))
             })
             .catch(err => {
-                
+
             })
     }, [dispatch])
 
