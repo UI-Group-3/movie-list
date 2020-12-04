@@ -1,4 +1,4 @@
-import { GET_MOVIE_GENRES, SET_CLICK_VALUE } from '../actionConstants';
+import * as actionTypes from '../actionConstants';
 
 const initialState = {
     genres: []
@@ -7,14 +7,14 @@ const initialState = {
 const categoriesReducer = (state = initialState, action) => {
 
     switch (action.type) {
-        case GET_MOVIE_GENRES: {
+        case actionTypes.GET_MOVIE_GENRES: {
             return {
                 ...state,
                 genres: action.payload.data
             }
         }
 
-        case SET_CLICK_VALUE: {
+        case actionTypes.SET_CLICK_VALUE: {
             return {
                 ...state,
                 genres: state.genres.map(genre => {

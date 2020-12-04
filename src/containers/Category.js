@@ -11,14 +11,15 @@ import { CategoryDiv } from '../style/jiayingZhou';
 
 const Category = () => {
     const dispatch = useDispatch();
-    // const [isClicked, setClicked] = useState(false);
     useEffect(() => {
         axios.get(GENRES_API)
             .then(res => {
+                console.log(res.data);
                 dispatch(getMovieGenres(res.data.genres))
+                
             })
             .catch(err => {
-                
+
             })
     }, [dispatch])
 

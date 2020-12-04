@@ -9,9 +9,13 @@ const Header = () => {
     })
 
     return (
+<<<<<<< HEAD
         <div>
             {bIsDesktop ? <Navbar/> : <Sidebar/>}
         </div>
+=======
+        <h1>This is Header</h1>
+>>>>>>> 2186bf98ba576225def940cd7c2c39c7173560d5
     )
 };
 
