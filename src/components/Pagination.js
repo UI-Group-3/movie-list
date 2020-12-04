@@ -1,7 +1,7 @@
-import {PaginationWrapper,Button,PageInfo} from '../style/pagination';
+import { PaginationWrapper, Button, PageInfo } from '../style/pagination';
 import React from 'react';
 
-const Pagination = () =>{
+const Pagination = () => {
     return (
         <PaginationWrapper>
             <Button>pre</Button>

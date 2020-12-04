@@ -43,8 +43,8 @@ export const ItemBottomWrapper = styled.div`
 `;
 
 export const SortInput = styled.input.attrs({
-    type:"radio",
-    name:"sort"
+    type: "radio",
+    name: "sort"
 })`
     width:12px;
     height:12px;

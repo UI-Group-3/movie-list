@@ -20,7 +20,7 @@ class List extends Component {
     }
 
     render() {
-        const { mouseIn, handleMouseEnter, handleMouseLeave, sortBy ,handleClickSort} = this.props;
+        const { mouseIn, handleMouseEnter, handleMouseLeave, sortBy, handleClickSort } = this.props;
         return (
             <ListWrapper>
                 <Sort sortBy={sortBy} handleClickSort={handleClickSort} ></Sort>
@@ -56,7 +56,7 @@ const mapDispatchToProps = (dispatch) => {
         handleClickLiked() {
             dispatch(actionCreators.clickLiked());
         },
-        handleClickSort(id){
+        handleClickSort(id) {
             dispatch(actionCreators.clickSort(id));
         }
 
