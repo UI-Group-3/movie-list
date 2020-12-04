@@ -1,4 +1,19 @@
-import { GET_MOVIE_GENRES, SET_CLICK_VALUE } from './actionConstants';
+import { GET_MOVIE_GENRES, SET_CLICK_VALUE,MOUSE_ENTER ,MOUSE_LEAVE,CLICK_LIKED} from './actionConstants';
+
+
+export const mouseEnter = () => ({
+    type: MOUSE_ENTER
+});
+
+export const mouseLeave = () => ({
+    type: MOUSE_LEAVE
+})
+
+export const clickLiked = () => ({
+    type: CLICK_LIKED
+})
+
+
 
 
 
@@ -19,3 +34,4 @@ export const setClickValue = (id) => {
         }
     };   
 };
+

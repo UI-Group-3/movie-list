@@ -10,7 +10,8 @@ function Icon() {
 
 const TMDBIcon = styled.img`
     height: 64px;
-    padding: 0 128px;
+    padding: 0;
+    margin: 0 128px;
 `
 
 export default Icon

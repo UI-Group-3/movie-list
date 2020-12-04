@@ -2,19 +2,18 @@ import React from 'react'
 import styled from 'styled-components'
 import Searchbar from './Searchbar'
 import Icon from './Icon'
-import SiderbarButton from './SidebarButton'
 
 function Sidebar() {
     return (
         <Side>
-            <Icon/>
-            <Searchbar/>
+            <Icon />
+            <Searchbar />
             <List>
-                    <Item>Movie List</Item>
-                    <Item>Liked List</Item>
-                    <Item>Blocked List</Item>
+                <Item>Movie List</Item>
+                <Item>Liked List</Item>
+                <Item>Blocked List</Item>
             </List>
-            <SiderbarButton/>
+            <Button>☰</Button>
         </Side>
     )
 }
@@ -37,7 +36,6 @@ const Side = styled.div`
 const List = styled.ul`
     list-style: none;
     padding: 0;
-    width: 800px;
 `
 const Item = styled.li`
     padding: 32px 0;
@@ -47,7 +45,21 @@ const Item = styled.li`
     color: #2278b5;
     text-align: center;
 `
+const Button = styled.button`
+    font-size: 32px;
+    cursor: pointer;
+    background-color: #f0f3f5;
+    color: black;
+    padding: 4px 10px;
+    border: none;
+    border-radius: 16px;
+    position: fixed;
+    bottom: 32px;
+    left: 32px;
 
-
+    &:hover{
+        color: #2278b5;
+    }
+`
 
 export default Sidebar

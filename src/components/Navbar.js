@@ -67,11 +67,16 @@ const List = styled.ul`
 `
 const Item = styled.li`
     float: left;
-    padding: 0 48px;
-    margin: 0;
+    padding: 0;
+    margin: 0 48px;
     font-size: 24px;
     font-weight: bold;
     color: #2278b5;
+
+    &:hover{
+        background-color: #2278b5;
+        color: white;
+    }
 `
 
 export default Navbar
