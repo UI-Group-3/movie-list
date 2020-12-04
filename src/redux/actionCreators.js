@@ -13,19 +13,19 @@ export const clickLiked = () => ({
 })
 
 export const getMovieList = (data) => ({
-    type:actionTypes.GET_MOVIE_LISTS,
+    type: actionTypes.GET_MOVIE_LISTS,
     payload: {
         data
     }
 })
 
-export const getSidebarStatus = (val)=>({
-    type: GET_SIDEBAR_VALUE,
+export const getSidebarStatus = (val) => ({
+    type: actionTypes.GET_SIDEBAR_VALUE,
     payload: {
         val
     }
 })
-export const clickSort = (id) =>({
+export const clickSort = (id) => ({
     type: actionTypes.CLICK_SORT,
     id
 
@@ -42,7 +42,7 @@ export const getMovieGenres = (data) => {
         payload: {
             data
         }
-    };   
+    };
 };
 
 export const setClickValue = (id) => {
@@ -51,6 +51,6 @@ export const setClickValue = (id) => {
         payload: {
             id
         }
-    };   
+    };
 };
 
