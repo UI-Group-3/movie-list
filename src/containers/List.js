@@ -4,13 +4,14 @@ import { ListWrapper, ListItem } from './ListStyle';
 import Sort from '../components/Sort';
 import ListItemBottom from '../components/ListItemBottom'
 import * as actionCreators from '../redux/actionCreators'
+import Pagination from '../components/Pagination'
 
 class List extends Component {
     getItemBottom(mouseIn) {
         const { isLiked, handleClickLiked } = this.props
         if (mouseIn) {
             return (
-                <ListItemBottom handleClickLiked={handleClickLiked} isLiked={isLiked}></ListItemBottom>
+                <ListItemBottom handleClickLiked={handleClickLiked} isLiked={isLiked} ></ListItemBottom>
             )
         }
         else {
@@ -19,10 +20,11 @@ class List extends Component {
     }
 
     render() {
-        const { mouseIn, handleMouseEnter, handleMouseLeave, sortList } = this.props;
+        const { mouseIn, handleMouseEnter, handleMouseLeave, sortBy ,handleClickSort} = this.props;
         return (
             <ListWrapper>
-                <Sort sortList={sortList}></Sort>
+                <Sort sortBy={sortBy} handleClickSort={handleClickSort} ></Sort>
+                <Pagination ></Pagination>
 
                 <ListItem onMouseEnter={handleMouseEnter}
                     onMouseLeave={handleMouseLeave}>
@@ -38,7 +40,8 @@ const mapStateToProps = (state) => {
     return {
         mouseIn: state.listState.mouseIn,
         isLiked: state.listState.isLiked,
-        sortList: state.listState.sortList,
+        sortBy: state.listState.sortBy,
+        isSort: state.listState.isSort
     }
 }
 
@@ -52,6 +55,9 @@ const mapDispatchToProps = (dispatch) => {
         },
         handleClickLiked() {
             dispatch(actionCreators.clickLiked());
+        },
+        handleClickSort(id){
+            dispatch(actionCreators.clickSort(id));
         }
 
     }

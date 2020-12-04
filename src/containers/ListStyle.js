@@ -52,15 +52,15 @@ export const SortInput = styled.input.attrs({
 
 export const Liked = styled.div` 
     float:left;
-    width:30%;
+    margin-right:25px
 `;
 
 export const Blocked = styled.div`
     float:left;
-    width:30%;
+    margin-right:25px
 `;
 
 export const Details = styled.div`
     float:left;
-    width:30%;
+    margin-right:25px
 `;

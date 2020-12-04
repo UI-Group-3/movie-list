@@ -23,7 +23,8 @@ export const CategoryLabel = styled.label`
     }
     &:hover{
         background:#eee
-    }   
+    }  
+     
 `;
 
 export const CategoryInput = styled.input`
