@@ -1,47 +1,13 @@
 import React, { Component } from 'react';
-import axios from 'axios';
 import { connect } from "react-redux";
 import { ListWrapper } from './ListStyle';
 import Sort from '../components/Sort';
 import * as actionCreators from '../redux/actionCreators';
-import { MOVIE_LIST_API } from '../redux/actionConstants';
 import Pagination from '../components/Pagination';
 import ListItem from '../components/ListItem'
 
 
 class List extends Component {
-
-    fetchData = () => {
-        const { handleFecthMovieList, totalPage } = this.props;
-        axios
-            .all(
-                [...new Array(totalPage)].map((i, j) =>
-                    axios.get(`${MOVIE_LIST_API}${j + 1}`)
-                )
-            )
-            .then(
-                axios.spread((...responses) => {
-                    let movies = [];
-                    responses.forEach((res) => movies = movies.concat(res.data.results))
-                    handleFecthMovieList(movies);
-                })
-            )
-            .catch((errors) => {
-                console.log(errors)
-            });
-
-
-    };
-
-
-
-    componentDidMount() {
-        this.fetchData();
-    }
-
-    // componentWillUnmount() {
-    //     this.fetchData();
-    // }
 
     render() {
         const { sortBy, handleClickSort, movieLists, page, totalPage, handleMouseEnter, handleClickLiked, handleMouseLeave } = this.props;
