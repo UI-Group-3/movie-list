@@ -1,9 +1,9 @@
 import React from 'react';
 import { LeftImg } from '../style/moiveDetail'
 
-const DetailLeft = () => {
+const DetailLeft = ({ src }) => {
     return (
-        <LeftImg />
+        <LeftImg src={src} />
 
     )
 }

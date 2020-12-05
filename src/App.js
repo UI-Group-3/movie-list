@@ -3,7 +3,8 @@ import { BrowserRouter as Router, Route } from 'react-router-dom'
 import Category from './containers/Category';
 import Header from './containers/Header';
 import List from './containers/List';
-import MovieDetail from './containers/MovieDetail'
+import MovieDetail from './containers/MovieDetail';
+import { browserHistory } from 'react-router';
 import axios from 'axios';
 import { useDispatch, useSelector } from 'react-redux';
 import { GENRES_API, MOVIE_LIST_API } from './redux/actionConstants'
@@ -48,7 +49,7 @@ const App = () => {
   const movieLists = useSelector(selectMovieLists);
   return (
     <div>
-      <Router>
+      <Router >
 
         <Header />
 

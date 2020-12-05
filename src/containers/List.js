@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
-import { ListWrapper } from './ListStyle';
+import { ListWrapper } from '../style/ListStyle';
 import Sort from '../components/Sort';
 import * as actionCreators from '../redux/actionCreators';
 import Pagination from '../components/Pagination';

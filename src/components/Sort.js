@@ -1,5 +1,5 @@
 import React from 'react'
-import { SortWrapper, SortItem, SortInput, } from '../containers/ListStyle';
+import { SortWrapper, SortItem, SortInput, } from '../style/ListStyle';
 
 
 const Sort = ({ sortBy, handleClickSort }) => {
