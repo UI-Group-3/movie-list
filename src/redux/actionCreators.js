@@ -1,15 +1,19 @@
 import * as actionTypes from './actionConstants';
 
-export const mouseEnter = () => ({
-    type: actionTypes.MOUSE_ENTER
-});
+export const mouseEnter = (id) => (
+    {
+        type: actionTypes.MOUSE_ENTER,
+        payload: { id }
+    });
 
-export const mouseLeave = () => ({
-    type: actionTypes.MOUSE_LEAVE
+export const mouseLeave = (id) => ({
+    type: actionTypes.MOUSE_LEAVE,
+    payload: { id }
 })
 
-export const clickLiked = () => ({
-    type: actionTypes.CLICK_LIKED
+export const clickLiked = (id) => ({
+    type: actionTypes.CLICK_LIKED,
+    payload: { id }
 })
 
 export const getMovieList = (data) => ({
@@ -32,8 +36,18 @@ export const clickSort = (id) => ({
 })
 
 
-
-
+export const prevPage = (page) => ({
+    type: actionTypes.PREV_PAGE,
+    payload: {
+        page
+    }
+})
+export const nextPage = (page) => ({
+    type: actionTypes.NEXT_PAGE,
+    payload: {
+        page
+    }
+})
 
 
 export const getMovieGenres = (data) => {
