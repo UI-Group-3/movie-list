@@ -39,6 +39,10 @@ class List extends Component {
         this.fetchData();
     }
 
+    // componentWillUnmount() {
+    //     this.fetchData();
+    // }
+
     render() {
         const { sortBy, handleClickSort, movieLists, page, totalPage, handleMouseEnter, handleClickLiked, handleMouseLeave } = this.props;
 

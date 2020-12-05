@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, memo } from 'react';
 import axios from 'axios';
 import { useDispatch, useSelector } from 'react-redux';
 import { GENRES_API } from '../redux/actionConstants'
@@ -9,7 +9,7 @@ import { CategoryDiv } from '../style/jiayingZhou';
 
 
 
-const Category = () => {
+const Category = memo(() => {
     const dispatch = useDispatch();
     useEffect(() => {
         axios.get(GENRES_API)
@@ -37,6 +37,6 @@ const Category = () => {
 
         </CategoryDiv>
     )
-};
+});
 
 export default Category;

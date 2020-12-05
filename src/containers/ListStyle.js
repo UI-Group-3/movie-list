@@ -27,7 +27,7 @@ export const ItemWrapper = styled.div`
     box-sizing:border-box;
     width:200px;
     height:250px;
-    margin-bottom:50px ;
+    margin-bottom:60px ;
 `;
 
 export const ItemBottomWrapper = styled.div`
