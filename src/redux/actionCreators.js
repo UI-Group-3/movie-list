@@ -68,3 +68,11 @@ export const setClickValue = (id) => {
     };
 };
 
+export const setBlockValue = (id) => {
+    return {
+        type: actionTypes.SET_BLOCK_VALUE,
+        payload: {
+            id
+        }
+    };
+};

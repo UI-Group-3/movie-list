@@ -14,7 +14,7 @@ const ListItem = (props) => {
                     <MovieImg
                         src={originalImg + movieItem.poster_path} />
                     {movieItem.mouseIn ? (
-                        <ListItemBottom handleClickLiked={() => handleClickLiked(movieItem.id)} isLiked={movieItem.isLiked} ></ListItemBottom>
+                        <ListItemBottom handleClickLiked={() => handleClickLiked(movieItem.id)} isLiked={movieItem.isLiked} id={movieItem.id}></ListItemBottom>
                     ) : (<></>)}
 
                     <MovieTitle>{movieItem.title}</MovieTitle>
