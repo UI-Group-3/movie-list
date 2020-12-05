@@ -74,6 +74,7 @@ const listsState = (state = initialState, action) => {
         case actionTypes.CLICK_SORT:
             const newSortList = state.sortBy.map((each) => {
                 if (each.id === action.id) each.isSort = !each.isSort;
+                else each.isSort = true;
                 return each;
             })
             return {

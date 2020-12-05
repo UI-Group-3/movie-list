@@ -32,7 +32,7 @@ export const Upper = styled.div`
     z-index: 1;
 `;
 
-export const Left_img = styled.img`
+export const LeftImg = styled.img`
     width:30%;
     height:80%;
     margin-right:100px;
