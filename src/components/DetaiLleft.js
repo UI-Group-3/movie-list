@@ -1,11 +1,8 @@
-import React from 'react';
-import { LeftImg } from '../style/moiveDetail'
+import React from "react";
+import { LeftImg } from "../style/moiveDetail";
 
 const DetailLeft = ({ src }) => {
-    return (
-        <LeftImg src={src} />
-
-    )
-}
+  return <LeftImg src={src} />;
+};
 
 export default DetailLeft;

@@ -1,4 +1,3 @@
-
 export const selectCategories = (store) => store.categoryState.genres;
 export const selectSidebar = (store) => store.sidebarState.bIsSidebarShow;
 export const selectCurrentPage = (store) => store.listState.page;

@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const DetailWrapper = styled.div`
     position:relative;
@@ -36,10 +36,10 @@ export const Upper = styled.div`
 `;
 
 export const LeftImg = styled.img`
-    width:30%;
-    height:80%;
-    margin-right:100px;
-    z-index: 99;
+  width: 30%;
+  height: 80%;
+  margin-right: 100px;
+  z-index: 99;
 `;
 
 export const RightWrapper = styled.div` 
@@ -56,8 +56,8 @@ export const MoiveName = styled.h1`
 `;
 
 export const GenresWrapper = styled.ul`
-    overflow:hidden;
-    margin: 20px 0;
+  overflow: hidden;
+  margin: 20px 0;
 `;
 
 export const GenresItem = styled.li`

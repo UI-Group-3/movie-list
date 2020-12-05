@@ -1,17 +1,21 @@
-import React from 'react'
-import icon from '../pictures/TMDB-icon.jpeg'
-import styled from 'styled-components'
+import React from "react";
+import icon from "../assets/images/TMDB-icon.svg";
+import styled from "styled-components";
+import { TMDBIcon } from "../style/header";
+import { useMediaQuery } from "react-responsive";
 
 function Icon() {
-    return (
-        <TMDBIcon src={icon} alt='TMDB Icon'/>
-    )
+  const bIsDesktop = useMediaQuery({
+    query: "(min-width: 1224px)",
+  });
+
+  return (
+    <TMDBIcon
+      src={icon}
+      alt="TMDB Icon"
+      className={bIsDesktop ? "top" : "side"}
+    />
+  );
 }
 
-const TMDBIcon = styled.img`
-    height: 64px;
-    padding: 0;
-    margin: 0 128px;
-`
-
-export default Icon
+export default Icon;

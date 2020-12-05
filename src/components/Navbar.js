@@ -1,90 +1,32 @@
-import React from 'react'
-import styled from 'styled-components'
-import Icon from '../components/Icon'
-import Searchbar from '../components/Searchbar';
-import { Link } from 'react-router-dom';
+import React from "react";
+import styled from "styled-components";
+import Icon from "../components/Icon";
+import Searchbar from "../components/Searchbar";
+import { Nav, Up, Down, NavList, NavItem } from "../style/header";
+import { Link } from "react-router-dom";
 
 function Navbar() {
-    return (
-        <Nav>
-            <Up>
-                <UpLeft>
-                    <Icon></Icon>
-                </UpLeft>
-                <UpRight>
-                    <Searchbar></Searchbar>
-                </UpRight>
-            </Up>
-            <Down>
-                <List>
-                    <Link to="/">
-                        <Item>Movie List</Item>
-                    </Link>
-                    <Link to="/likelist">
-                        <Item>Liked List</Item>
-                    </Link>
-                    <Link to="/blocklist">
-                        <Item>Blocked List</Item>
-                    </Link>
-
-                </List>
-            </Down>
-        </Nav>
-    )
+  return (
+    <Nav>
+      <Up>
+        <Icon />
+        <Searchbar />
+      </Up>
+      <Down>
+        <NavList>
+          <Link to="/">
+            <NavItem>Movie List</NavItem>
+          </Link>
+          <Link to="/likelist">
+            <NavItem>Liked List</NavItem>
+          </Link>
+          <Link to="/blocklist">
+            <NavItem>Blocked List</NavItem>
+          </Link>
+        </NavList>
+      </Down>
+    </Nav>
+  );
 }
 
-const Nav = styled.div`
-    width: 100%;
-    height: 144px;
-    background-color: #f0f3f5;
-`
-const Up = styled.div`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 96px;
-    margin: 0;
-    padding: 0;
-    border-bottom: 1px solid #e5ebe4;
-`
-const UpLeft = styled.div`
-    width: 100%;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-`
-
-const UpRight = styled.div`
-    width: 100%;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-`
-
-const Down = styled.div`
-    height: 48px;
-    font-size: 24px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-`
-
-const List = styled.ul`
-    list-style: none;
-    padding: 0;
-`
-const Item = styled.li`
-    float: left;
-    padding: 0;
-    margin: 0 48px;
-    font-size: 24px;
-    font-weight: bold;
-    color: #2278b5;
-
-    &:hover{
-        background-color: #2278b5;
-        color: white;
-    }
-`
-
-export default Navbar
+export default Navbar;

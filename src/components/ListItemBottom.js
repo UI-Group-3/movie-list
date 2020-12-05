@@ -25,4 +25,3 @@ const ListItemBottom = ({ isLiked, handleClickLiked, id, handleClickDetails }) =
 
 
 export default ListItemBottom;
-

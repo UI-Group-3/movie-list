@@ -1,35 +1,19 @@
-import React from 'react'
-import styled from 'styled-components'
+import React from "react";
+import styled from "styled-components";
+import { useMediaQuery } from "react-responsive";
+import { Search, SearchText, SearchButton } from "../style/header";
 
 function Searchbar() {
-    return (
-        <Search>
-            <SearchText placeholder="Please input a movie name!" />
-            <SearchButton type="submit" value="Search" />
-        </Search>
-    )
+  const bIsDesktop = useMediaQuery({
+    query: "(min-width: 1224px)",
+  });
+
+  return (
+    <Search className={bIsDesktop ? "top" : "side"}>
+      <SearchText placeholder="Please input a movie name!" />
+      <SearchButton type="submit" value="Search" />
+    </Search>
+  );
 }
 
-const Search = styled.div`
-    height: 64px;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-`
-
-const SearchText = styled.input`
-    height: 32px;
-    width: 200px;
-    background: #fff;
-    margin: 8px 8px;
-`
-
-const SearchButton = styled.input`
-    height: 32px;
-    width: 64px;
-    margin: 8px 8px;
-`
-
-export default Searchbar
+export default Searchbar;
