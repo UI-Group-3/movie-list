@@ -1,58 +1,52 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { connect } from "react-redux";
-import { ListWrapper, ListItem } from './ListStyle';
+import { ListWrapper } from './ListStyle';
 import Sort from '../components/Sort';
-import ListItemBottom from '../components/ListItemBottom'
-import * as actionCreators from '../redux/actionCreators'
-import { MOVIE_LIST_API } from '../redux/actionConstants'
+import * as actionCreators from '../redux/actionCreators';
+import { MOVIE_LIST_API } from '../redux/actionConstants';
 import Pagination from '../components/Pagination';
+import ListItem from '../components/ListItem'
 
 
 class List extends Component {
 
-    fetchData = async () => {
-        const { handleFecthMovieList } = this.props;
-        for (let i = 1; i <= 500; i++) {
-            const response = await axios.get(`${MOVIE_LIST_API}${1}`);
-            handleFecthMovieList(response.data.results);
-        }
+    fetchData = () => {
+        const { handleFecthMovieList, totalPage } = this.props;
+        axios
+            .all(
+                [...new Array(totalPage)].map((i, j) =>
+                    axios.get(`${MOVIE_LIST_API}${j + 1}`)
+                )
+            )
+            .then(
+                axios.spread((...responses) => {
+                    let movies = [];
+                    responses.forEach((res) => movies = movies.concat(res.data.results))
+                    handleFecthMovieList(movies);
+                })
+            )
+            .catch((errors) => {
+                console.log(errors)
+            });
+
 
     };
 
+
+
     componentDidMount() {
         this.fetchData();
-
-    }
-
-    getItemBottom(mouseIn) {
-        const { isLiked, handleClickLiked } = this.props
-        if (mouseIn) {
-            return (
-                <ListItemBottom handleClickLiked={handleClickLiked} isLiked={isLiked} ></ListItemBottom>
-            )
-        }
-        else {
-            return null;
-        }
     }
 
     render() {
-        const { mouseIn, handleMouseEnter, handleMouseLeave, sortBy, handleClickSort } = this.props;
+        const { sortBy, handleClickSort, movieLists, page, totalPage, handleMouseEnter, handleClickLiked, handleMouseLeave } = this.props;
+
         return (
-
-            <ListWrapper>
-
-
+            <ListWrapper >
                 <Sort sortBy={sortBy} handleClickSort={handleClickSort} ></Sort>
-
-                <Pagination ></Pagination>
-
-
-                <ListItem onMouseEnter={handleMouseEnter}
-                    onMouseLeave={handleMouseLeave} >
-                    {this.getItemBottom(mouseIn)}
-                </ListItem>
+                <Pagination page={page} totalPage={totalPage}></Pagination>
+                <ListItem page={page} movieLists={movieLists} handleMouseEnter={handleMouseEnter} handleClickLiked={handleClickLiked} handleMouseLeave={handleMouseLeave}></ListItem>
             </ListWrapper>
 
         )
@@ -61,24 +55,24 @@ class List extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        mouseIn: state.listState.mouseIn,
-        isLiked: state.listState.isLiked,
         movieLists: state.listState.movieLists,
         sortBy: state.listState.sortBy,
-        isSort: state.listState.isSort
+        isSort: state.listState.isSort,
+        page: state.listState.page,
+        totalPage: state.listState.totalPage
     }
 }
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        handleMouseEnter() {
-            dispatch(actionCreators.mouseEnter());
+        handleMouseEnter(id) {
+            dispatch(actionCreators.mouseEnter(id));
         },
-        handleMouseLeave() {
-            dispatch(actionCreators.mouseLeave());
+        handleMouseLeave(id) {
+            dispatch(actionCreators.mouseLeave(id));
         },
-        handleClickLiked() {
-            dispatch(actionCreators.clickLiked());
+        handleClickLiked(id) {
+            dispatch(actionCreators.clickLiked(id));
         },
         handleFecthMovieList(data) {
             dispatch(actionCreators.getMovieList(data));

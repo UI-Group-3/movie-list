@@ -4,7 +4,6 @@ import { Left_img, } from '../style/moiveDetail'
 const DetailLeft = () => {
     return (
         <Left_img>
-
         </Left_img>
     )
 }
