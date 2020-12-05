@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-// import { useDispatch, useSelector } from 'react-redux';
 import { connect } from "react-redux";
 import { ListWrapper, ListItem } from './ListStyle';
 import Sort from '../components/Sort';
 import ListItemBottom from '../components/ListItemBottom'
 import * as actionCreators from '../redux/actionCreators'
 import { MOVIE_LIST_API } from '../redux/actionConstants'
-import Pagination from '../components/Pagination'
+import Pagination from '../components/Pagination';
+
 
 class List extends Component {
 
@@ -37,17 +37,24 @@ class List extends Component {
         }
     }
 
-    render() {        
+    render() {
         const { mouseIn, handleMouseEnter, handleMouseLeave, sortBy, handleClickSort } = this.props;
         return (
+
             <ListWrapper>
+
+
                 <Sort sortBy={sortBy} handleClickSort={handleClickSort} ></Sort>
+
                 <Pagination ></Pagination>
-                    <ListItem onMouseEnter={handleMouseEnter}
-                        onMouseLeave={handleMouseLeave} >
-                        {this.getItemBottom(mouseIn)}
-                    </ListItem>
+
+
+                <ListItem onMouseEnter={handleMouseEnter}
+                    onMouseLeave={handleMouseLeave} >
+                    {this.getItemBottom(mouseIn)}
+                </ListItem>
             </ListWrapper>
+
         )
     }
 };
@@ -74,7 +81,7 @@ const mapDispatchToProps = (dispatch) => {
             dispatch(actionCreators.clickLiked());
         },
         handleFecthMovieList(data) {
-                    dispatch(actionCreators.getMovieList(data));
+            dispatch(actionCreators.getMovieList(data));
         },
         handleClickSort(id) {
             dispatch(actionCreators.clickSort(id));

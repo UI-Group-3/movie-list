@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import Icon from '../components/Icon'
 import Searchbar from '../components/Searchbar';
+import { Link } from 'react-router-dom';
 
 function Navbar() {
     return (
@@ -16,9 +17,16 @@ function Navbar() {
             </Up>
             <Down>
                 <List>
-                    <Item>Movie List</Item>
-                    <Item>Liked List</Item>
-                    <Item>Blocked List</Item>
+                    <Link to="/">
+                        <Item>Movie List</Item>
+                    </Link>
+                    <Link to="/likelist">
+                        <Item>Liked List</Item>
+                    </Link>
+                    <Link to="/blocklist">
+                        <Item>Blocked List</Item>
+                    </Link>
+
                 </List>
             </Down>
         </Nav>

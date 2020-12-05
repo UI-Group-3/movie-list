@@ -14,7 +14,7 @@ html, body, div, span, applet, object, iframe,
 	figure, figcaption, footer, header, hgroup, 
 	menu, nav, output, ruby, section, summary,
 	time, mark, audio, video {
-		font-family: Times New Roman,Helvetica,Helvetica Neue;
+		font-family: Georgia, serif,Times New Roman,Helvetica,Helvetica Neue;
 		margin: 0;
 		padding: 0;
 		border: 0;
