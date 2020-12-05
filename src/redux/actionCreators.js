@@ -76,3 +76,12 @@ export const setBlockValue = (id) => {
         }
     };
 };
+
+export const setItemDetailValue = (id) => {
+    return {
+        type: actionTypes.SET_ITEM_DETAIL_VALUE,
+        payload: {
+            id
+        }
+    };
+}

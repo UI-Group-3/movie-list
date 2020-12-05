@@ -1,10 +1,10 @@
 import React from 'react';
 import { ItemBottomWrapper, Liked, Blocked, Details } from '../containers/ListStyle';
 import { Link } from 'react-router-dom';
-import { setBlockValue } from '../redux/actionCreators';
+import { setBlockValue, setItemDetailValue } from '../redux/actionCreators';
 import { useDispatch } from 'react-redux';
 
-const ListItemBottom = ({ isLiked, handleClickLiked, id }) => {
+const ListItemBottom = ({ isLiked, handleClickLiked, id, handleClickDetails }) => {
     const dispatch = useDispatch();
     return (
         <ItemBottomWrapper>
@@ -15,7 +15,7 @@ const ListItemBottom = ({ isLiked, handleClickLiked, id }) => {
                 <i className="iconfont ">&#xe630;</i>
             </Blocked>
             <Link to="/detail">
-                <Details >
+                <Details onClick={() => dispatch(setItemDetailValue(id))}>
                     <i className="iconfont">&#xe708;</i>
                 </Details>
             </Link>
