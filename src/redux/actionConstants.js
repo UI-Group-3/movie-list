@@ -7,6 +7,9 @@ export const GET_MOVIE_GENRES = 'get_movie_genres';
 export const GET_MOVIE_LISTS = 'get_movie_lists';
 export const SET_CLICK_VALUE = 'set_click_value';
 export const SET_BLOCK_VALUE = 'set_block_value';
+export const SET_CLICK_BLOCKLIST_VALUE = 'set_click_blocklist_value';
+export const SET_CLICK_LIKELIST_VALUE = 'set_click_likelist_value';
+export const SET_CLICK_MOVIELIST_VALUE = 'set_click_movielist_value';
 
 export const PREV_PAGE = 'prev_page';
 export const NEXT_PAGE = 'next_page';

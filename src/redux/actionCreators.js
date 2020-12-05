@@ -11,9 +11,9 @@ export const mouseLeave = (id) => ({
     payload: { id }
 })
 
-export const clickLiked = (id) => ({
+export const clickLiked = (data) => ({
     type: actionTypes.CLICK_LIKED,
-    payload: { id }
+    payload: { data }
 })
 
 export const getMovieList = (data) => ({
@@ -68,11 +68,29 @@ export const setClickValue = (id) => {
     };
 };
 
-export const setBlockValue = (id) => {
+export const setBlockValue = (data) => {
     return {
         type: actionTypes.SET_BLOCK_VALUE,
         payload: {
-            id
+            data
         }
+    };
+};
+
+export const setClickBlockListValue = () => {
+    return {
+        type: actionTypes.SET_CLICK_BLOCKLIST_VALUE,
+    };
+};
+
+export const setClickLikeListValue = () => {
+    return {
+        type: actionTypes.SET_CLICK_LIKELIST_VALUE,
+    };
+};
+
+export const setClickMovieListValue = () => {
+    return {
+        type: actionTypes.SET_CLICK_MOVIELIST_VALUE,
     };
 };

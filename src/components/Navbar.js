@@ -3,8 +3,11 @@ import styled from 'styled-components'
 import Icon from '../components/Icon'
 import Searchbar from '../components/Searchbar';
 import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { setClickBlockListValue, setClickLikeListValue, setClickMovieListValue } from '../redux/actionCreators';
 
 function Navbar() {
+    const dispatch = useDispatch();
     return (
         <Nav>
             <Up>
@@ -18,13 +21,13 @@ function Navbar() {
             <Down>
                 <List>
                     <Link to="/">
-                        <Item>Movie List</Item>
+                        <Item onClick={() => dispatch(setClickMovieListValue())}>Movie List</Item>
                     </Link>
                     <Link to="/likelist">
-                        <Item>Liked List</Item>
+                        <Item onClick={() => dispatch(setClickLikeListValue())}>Liked List</Item>
                     </Link>
                     <Link to="/blocklist">
-                        <Item>Blocked List</Item>
+                        <Item onClick={() => dispatch(setClickBlockListValue())}>Blocked List</Item>
                     </Link>
 
                 </List>

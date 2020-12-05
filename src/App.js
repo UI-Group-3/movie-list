@@ -3,7 +3,9 @@ import { BrowserRouter as Router, Route } from 'react-router-dom'
 import Category from './containers/Category';
 import Header from './containers/Header';
 import List from './containers/List';
-import MovieDetail from './containers/MovieDetail'
+import ListItem from './components/ListItem';
+import MovieDetail from './containers/MovieDetail';
+import { ListWrapper } from './containers/ListStyle';
 import axios from 'axios';
 import { useDispatch, useSelector } from 'react-redux';
 import { GENRES_API, MOVIE_LIST_API } from './redux/actionConstants'
@@ -62,10 +64,14 @@ const App = () => {
         </Route>
 
         <Route path="/blocklist" exact>
-          XXX
+          <ListWrapper>
+            <ListItem />
+          </ListWrapper>
         </Route>
         <Route path="/likelist" exact>
-          YYY
+          <ListWrapper>
+            <ListItem />
+          </ListWrapper>
         </Route>
       </Router>
 
