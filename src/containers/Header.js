@@ -10,7 +10,7 @@ const Header = () => {
 
     return (
         <div>
-            {bIsDesktop ? <Navbar/> : <Sidebar/>}
+            {bIsDesktop ? <Navbar /> : <Sidebar/>}
         </div>
     )
 };
