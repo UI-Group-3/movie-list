@@ -1,16 +1,13 @@
 import Sort from "../../components/Sort";
 import * as actionTypes from "../actionConstants";
 const initialState = {
-  isLiked: false,
-  movieLists: [],
-  page: 1,
-  totalPage: 500,
-  isSort: true,
-  sortBy: [
-    { id: 1, name: "Sort By Name", isSort: true },
-    { id: 2, name: "Sort By Time", isSort: true },
-    { id: 3, name: "Sort By Rating", isSort: true },
-  ],
+    isLiked: false,
+    movieLists: [],
+    page: 1,
+    totalPage: 500,
+    isSort: true,
+    sortBy: [{ id: 1, name: "Sort By Name", isSort: true }, { id: 2, name: "Sort By Time", isSort: true }, { id: 3, name: "Sort By Rating", isSort: true }],
+    itemDetail: []
 };
 
 const listsState = (state = initialState, action) => {
@@ -125,6 +122,19 @@ const listsState = (state = initialState, action) => {
             return movie.isBlocked === false;
           }),
       };
+        case actionTypes.SET_ITEM_DETAIL_VALUE:
+            return {
+                ...state,
+                itemDetail: state.movieLists.filter(each => {
+                    if (each.id === action.payload.id) {
+                        return {
+                            each
+                        }
+                    }
+                })
+
+            }
+
 
     default:
       return state;

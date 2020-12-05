@@ -1,11 +1,6 @@
-import React from "react";
-import {
-  ItemWrapper,
-  MovieImg,
-  MovieTitle,
-  MovieYear,
-} from "../containers/ListStyle";
-import ListItemBottom from "./ListItemBottom";
+import React from 'react';
+import { ItemWrapper, MovieImg, MovieTitle, MovieYear } from '../style/ListStyle';
+import ListItemBottom from './ListItemBottom';
 
 const ListItem = (props) => {
   const {

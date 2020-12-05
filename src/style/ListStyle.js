@@ -31,15 +31,14 @@ export const ItemWrapper = styled.div`
 `;
 
 export const ItemBottomWrapper = styled.div`
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  bottom: 0;
-  width: 100%;
-  height: 20%;
-  background-color: #f0f3f5;
-  opacity: 0.5;
+    position:absolute;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    bottom:0;
+    width:100%;
+    height:20%;
+    background-color: rgba(240,243,245,0.5) ;
 `;
 
 export const SortInput = styled.input.attrs({
