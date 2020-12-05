@@ -1,5 +1,5 @@
 import React from 'react';
-import { ItemBottomWrapper, Liked, Blocked, Details } from '../containers/ListStyle';
+import { ItemBottomWrapper, Liked, Blocked, Details } from '../style/ListStyle';
 import { Link } from 'react-router-dom';
 import { setBlockValue, setItemDetailValue } from '../redux/actionCreators';
 import { useDispatch } from 'react-redux';
