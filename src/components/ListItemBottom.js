@@ -9,7 +9,7 @@ const ListItemBottom=({isLiked,handleClickLiked})=>{
                     {isLiked ? (<i className="iconfont liked">&#xe8ab;</i>) : (<i className="iconfont">&#xe623;</i>)}
                 </Liked>
                 <Blocked>
-                    <i className="iconfont ">&#xe630;</i>
+                    <i className="iconfont " >&#xe630;</i>
                 </Blocked>
                 <Details>
                     <i className="iconfont">&#xe708;</i>
