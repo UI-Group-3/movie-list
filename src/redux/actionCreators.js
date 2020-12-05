@@ -1,78 +1,75 @@
-import * as actionTypes from './actionConstants';
+import { act } from "react-dom/test-utils";
+import * as actionTypes from "./actionConstants";
 
-export const mouseEnter = (id) => (
-    {
-        type: actionTypes.MOUSE_ENTER,
-        payload: { id }
-    });
+export const mouseEnter = (id) => ({
+  type: actionTypes.MOUSE_ENTER,
+  payload: { id },
+});
 
 export const mouseLeave = (id) => ({
-    type: actionTypes.MOUSE_LEAVE,
-    payload: { id }
-})
+  type: actionTypes.MOUSE_LEAVE,
+  payload: { id },
+});
 
 export const clickLiked = (id) => ({
-    type: actionTypes.CLICK_LIKED,
-    payload: { id }
-})
+  type: actionTypes.CLICK_LIKED,
+  payload: { id },
+});
 
 export const getMovieList = (data) => ({
-    type: actionTypes.GET_MOVIE_LISTS,
-    payload: {
-        data
-    }
-})
+  type: actionTypes.GET_MOVIE_LISTS,
+  payload: {
+    data,
+  },
+});
 
 export const getSidebarStatus = (val) => ({
-    type: actionTypes.GET_SIDEBAR_VALUE,
-    payload: {
-        val
-    }
-})
+  type: actionTypes.GET_SIDEBAR_VALUE,
+  payload: {
+    val,
+  },
+});
 export const clickSort = (id) => ({
-    type: actionTypes.CLICK_SORT,
-    id
-
-})
-
+  type: actionTypes.CLICK_SORT,
+  id,
+});
 
 export const prevPage = (page) => ({
-    type: actionTypes.PREV_PAGE,
-    payload: {
-        page
-    }
-})
+  type: actionTypes.PREV_PAGE,
+  payload: {
+    page,
+  },
+});
 export const nextPage = (page) => ({
-    type: actionTypes.NEXT_PAGE,
-    payload: {
-        page
-    }
-})
-
+  type: actionTypes.NEXT_PAGE,
+  payload: {
+    page,
+  },
+});
 
 export const getMovieGenres = (data) => {
-    return {
-        type: actionTypes.GET_MOVIE_GENRES,
-        payload: {
-            data
-        }
-    };
+  return {
+    type: actionTypes.GET_MOVIE_GENRES,
+    payload: {
+      data,
+    },
+  };
 };
 
 export const setClickValue = (id) => {
-    return {
-        type: actionTypes.SET_CLICK_VALUE,
-        payload: {
-            id
-        }
-    };
+  return {
+    type: actionTypes.SET_CLICK_VALUE,
+    payload: {
+      id,
+    },
+  };
 };
 
 export const setBlockValue = (id) => {
-    return {
-        type: actionTypes.SET_BLOCK_VALUE,
-        payload: {
-            id
-        }
-    };
+  return {
+    type: actionTypes.SET_BLOCK_VALUE,
+    payload: {
+      id,
+    },
+  };
 };
