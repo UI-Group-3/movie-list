@@ -27,7 +27,7 @@ export const ListItem = styled.div`
     box-sizing:border-box;
     width:200px;
     height:250px;
-    margin-bottom:20px ;
+    margin-bottom:50px ;
     background:skyblue;
 `;
 
