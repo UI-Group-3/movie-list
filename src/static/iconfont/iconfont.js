@@ -26,7 +26,7 @@ export const Headericon = createGlobalStyle`
   }
 
   .up {
-    color:#666;
+    color:#2278b5;
     font-size:10px;
     margin:0 5px
   }

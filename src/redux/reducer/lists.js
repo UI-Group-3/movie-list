@@ -94,6 +94,22 @@ const listsState = (state = initialState, action) => {
                 page: action.payload.page
             }
 
+        case actionTypes.SET_BLOCK_VALUE:
+            return {
+                ...state,
+                movieLists: state.movieLists.map(each => {
+                    if (each.id === action.payload.id) {
+                        return {
+                            ...each,
+                            isBlocked: true
+                        };
+                    }
+                    return each;
+                }).filter(movie => {
+                    return movie.isBlocked === false
+                })
+            }
+
         default:
             return state;
 
