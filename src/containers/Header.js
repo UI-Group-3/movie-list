@@ -1,5 +1,5 @@
 import React from 'react';
-import {useMediaQuery} from 'react-responsive'
+import { useMediaQuery } from 'react-responsive'
 import Navbar from '../components/Navbar';
 import Sidebar from '../components/Sidebar';
 
@@ -9,6 +9,7 @@ const Header = () => {
     })
 
     return (
+
         <div>
             {bIsDesktop ? <Navbar /> : <Sidebar/>}
         </div>

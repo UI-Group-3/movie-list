@@ -22,13 +22,12 @@ export const SortItem = styled.div`
     margin:15px 20px 15px 0;
 `;
 
-export const ListItem = styled.div`
+export const ItemWrapper = styled.div`
     position:relative;
     box-sizing:border-box;
     width:200px;
     height:250px;
-    margin-bottom:50px ;
-    background:skyblue;
+    margin-bottom:60px ;
 `;
 
 export const ItemBottomWrapper = styled.div`
@@ -39,7 +38,8 @@ export const ItemBottomWrapper = styled.div`
     bottom:0;
     width:100%;
     height:20%;
-    background-color: rgba(0,0,0,.3);
+    background-color: #f0f3f5 ;
+    opacity:0.5;
 `;
 
 export const SortInput = styled.input.attrs({
@@ -50,9 +50,8 @@ export const SortInput = styled.input.attrs({
     height:12px;
 `;
 
-export const Liked = styled.div` 
-    float:left;
-    margin-right:25px
+export const Liked = styled.div`
+    margin-right:25px;    
 `;
 
 export const Blocked = styled.div`
@@ -63,4 +62,20 @@ export const Blocked = styled.div`
 export const Details = styled.div`
     float:left;
     margin-right:25px
+`;
+
+export const MovieTitle = styled.div`
+    text-align:center;
+    margin-bottom:5px;
+`;
+
+export const MovieYear = styled.div`
+    text-align:center;
+`;
+
+export const MovieImg = styled.img.attrs({
+    alt: ""
+})`
+    width:100%;
+    height:100%
 `;

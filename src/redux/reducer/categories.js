@@ -1,7 +1,7 @@
 import * as actionTypes from '../actionConstants';
 
 const initialState = {
-    genres: []
+    genres: [{ id: 1, name: "All" }]
 };
 
 const categoriesReducer = (state = initialState, action) => {
@@ -10,7 +10,7 @@ const categoriesReducer = (state = initialState, action) => {
         case actionTypes.GET_MOVIE_GENRES: {
             return {
                 ...state,
-                genres: action.payload.data
+                genres: [...state.genres, ...action.payload.data]
             }
         }
 
@@ -34,12 +34,12 @@ const categoriesReducer = (state = initialState, action) => {
             }
         }
 
-        default :
-        return state;
+        default:
+            return state;
     }
-    
 
-    
+
+
 };
 
 export default categoriesReducer;

@@ -74,6 +74,7 @@ const listsState = (state = initialState, action) => {
         case actionTypes.CLICK_SORT:
             const newSortList = state.sortBy.map((each) => {
                 if (each.id === action.id) each.isSort = !each.isSort;
+                else each.isSort = true;
                 return each;
             })
             return {
@@ -91,6 +92,22 @@ const listsState = (state = initialState, action) => {
             return {
                 ...state,
                 page: action.payload.page
+            }
+
+        case actionTypes.SET_BLOCK_VALUE:
+            return {
+                ...state,
+                movieLists: state.movieLists.map(each => {
+                    if (each.id === action.payload.id) {
+                        return {
+                            ...each,
+                            isBlocked: true
+                        };
+                    }
+                    return each;
+                }).filter(movie => {
+                    return movie.isBlocked === false
+                })
             }
 
         default:
