@@ -10,8 +10,12 @@ const initialState = {
     page: 1,
     totalPage: 500,
     isSort: true,
-    sortBy: [{ id: 1, name: "Sort By Name", isSort: true }, { id: 2, name: "Sort By Time", isSort: true }, { id: 3, name: "Sort By Rating", isSort: true }],
-    itemDetail: []
+    sortBy: [
+        { id: 1, name: "Sort By Name", isSort: true },
+        { id: 2, name: "Sort By Time", isSort: true },
+        { id: 3, name: "Sort By Rating", isSort: true },
+    ],
+    itemDetail: [],
 };
 
 const listsState = (state = initialState, action) => {
@@ -20,24 +24,23 @@ const listsState = (state = initialState, action) => {
             return {
                 ...state,
                 likeLists: [...state.likeLists, action.payload.data],
-                movieLists: state.movieLists.map(each => {
+                movieLists: state.movieLists.map((each) => {
                     if (each.id === action.payload.data.id) {
                         if (each.isLiked === false) {
                             return {
                                 ...each,
-                                isLiked: true
+                                isLiked: true,
                             };
                         } else {
                             return {
                                 ...each,
-                                isLiked: false
+                                isLiked: false,
                             };
                         }
                     }
                     return each;
-                })
-            }
-
+                }),
+            };
 
         case actionTypes.GET_MOVIE_LISTS: {
             return {
@@ -64,6 +67,7 @@ const listsState = (state = initialState, action) => {
                 [...state.movieLists],
                 currentSort.isSort
             );
+
             return {
                 ...state,
                 sortBy: newSortList,
@@ -83,56 +87,56 @@ const listsState = (state = initialState, action) => {
             };
 
         case actionTypes.SET_BLOCK_VALUE:
-
-            const newList = state.movieLists.map(each => {
-                if (each.id === action.payload.data.id) {
-                    return {
-                        ...each,
-                        isBlocked: true
-                    };
-                }
-                return each;
-            }).filter(each => {
-                return each.isBlocked === false
-            });
+            const newList = state.movieLists
+                .map((each) => {
+                    if (each.id === action.payload.data.id) {
+                        return {
+                            ...each,
+                            isBlocked: true,
+                        };
+                    }
+                    return each;
+                })
+                .filter((each) => {
+                    return each.isBlocked === false;
+                });
 
             return {
                 ...state,
                 blockLists: [...state.blockLists, action.payload.data],
-                movieLists: newList
-            }
+                movieLists: newList,
+            };
         case actionTypes.SET_CLICK_BLOCKLIST_VALUE:
             return {
                 ...state,
                 isClickedLikeList: false,
-                isClickedBlockList: true
-            }
+                isClickedBlockList: true,
+            };
 
         case actionTypes.SET_CLICK_LIKELIST_VALUE:
             return {
                 ...state,
                 isClickedBlockList: false,
-                isClickedLikeList: true
-            }
+                isClickedLikeList: true,
+            };
 
         case actionTypes.SET_CLICK_MOVIELIST_VALUE:
             return {
                 ...state,
                 isClickedBlockList: false,
-                isClickedLikeList: false
-            }
+                isClickedLikeList: false,
+            };
         case actionTypes.SET_ITEM_DETAIL_VALUE:
             return {
                 ...state,
-                itemDetail: state.movieLists.filter(each => {
+                itemDetail: state.movieLists.filter((each) => {
                     if (each.id === action.payload.id) {
                         return {
-                            each
-                        }
+                            each,
+                        };
                     }
-                })
-
-            }
+                }),
+            };
 
         default:
             return state;
