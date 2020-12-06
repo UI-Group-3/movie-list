@@ -1,9 +1,9 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { ItemWrapper, MovieImg, MovieTitle, MovieYear } from '../containers/ListStyle';
+import { ItemWrapper, MovieImg, MovieTitle, MovieYear } from '../style/ListStyle';
 import ListItemBottom from './ListItemBottom';
 import { selectIsClickedBlockList, selectMovieLists, selectCurrentPage, selectIsClickedLikeList, selectBlockLists, selectLikeLists } from '../redux/selectors';
-import { mouseEnter, mouseLeave, clickLiked } from '../redux/actionCreators';
+import { mouseEnter, mouseLeave } from '../redux/actionCreators';
 
 const ListItem = (props) => {
     // const { movieLists, page, handleMouseEnter, handleClickLiked, handleMouseLeave } = props;
@@ -13,23 +13,11 @@ const ListItem = (props) => {
     const movieLists = useSelector(selectMovieLists);
     const movieLikeLists = useSelector(selectLikeLists);
     const movieBlockLists = useSelector(selectBlockLists);
-    console.log("1" + movieLikeLists.length);
-    console.log("2" + movieBlockLists.length);
-    let currentMovieList = [];
-    if (isClickLikeList === true) {
-        console.log("123");
-        currentMovieList = movieLikeLists;
-    } else if (isClickBlockList === true) {
-        console.log("456");
-        currentMovieList = movieBlockLists;
-    } else {
-        console.log("123456");
-        currentMovieList = movieLists;
-    }
-    // let currentMovieList = (isClickBlockList ? (movieBlockLists) : (isClickLikeList ? (movieLikeLists) : (movieLists)));
-    console.log("3" + currentMovieList.length);
+    let showMovieList = (isClickBlockList ? (movieBlockLists) : (isClickLikeList ? (movieLikeLists) : (movieLists)));
+    console.log(showMovieList);
     const page = useSelector(selectCurrentPage);
-    // const currentMovieList = movieLists.slice((page - 1) * 20, page * 20);
+
+    let currentMovieList = showMovieList.slice((page - 1) * 20, page * 20);
     const originalImg = "https://image.tmdb.org/t/p/original";
     return (
         <>
@@ -39,18 +27,14 @@ const ListItem = (props) => {
                     <MovieImg
                         src={originalImg + movieItem.poster_path} />
                     {movieItem.mouseIn ? (
-                        <ListItemBottom handleClickLiked={() => dispatch(clickLiked(movieItem))} isLiked={movieItem.isLiked} movie={movieItem}></ListItemBottom>
+                        <ListItemBottom isLiked={movieItem.isLiked} movie={movieItem}></ListItemBottom>
                     ) : (<></>)}
-
                     <MovieTitle>{movieItem.title}</MovieTitle>
                     <MovieYear>{movieItem.release_date}</MovieYear>
-                </ItemWrapper>
-            ))
-            }
-
+                </ItemWrapper>))}
         </>
     )
-
 }
 
-export default ListItem
+
+export default ListItem;

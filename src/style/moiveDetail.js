@@ -1,7 +1,9 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const DetailWrapper = styled.div`
-    background: no-repeat;
+    position:relative;
+    background: url(${(props) => props.imgUrl});
+    background-size:100% 100%;
     font-family: Georgia, serif; 
     width:1100px;
     height:500px;
@@ -10,8 +12,8 @@ export const DetailWrapper = styled.div`
 
 export const Close = styled.button`
     position: absolute;
-    top: 200px;
-    right: 200px;
+    top: 10px;
+    right: 20px;
     width: 80px;
     height: 30px;
     border-radius:5px;
@@ -22,25 +24,25 @@ export const Close = styled.button`
 `;
 
 export const Upper = styled.div`
+    
     display:flex;
     justify-content:center;
     flex-wrap:wrap;
     align-items:center;
     height: 100%;
     width: 100%;
-    background:rgba(0, 0,0, 0.7);
-    z-index: 1;
+    background:rgba(0, 0,0, 0.6);
+    z-index:1;
 `;
 
 export const LeftImg = styled.img`
-    width:30%;
-    height:80%;
-    margin-right:100px;
-    z-index: 99;
+  width: 30%;
+  height: 80%;
+  margin-right: 100px;
+  z-index: 99;
 `;
 
-export const RightWrapper = styled.div`
-   
+export const RightWrapper = styled.div` 
     width:45%;
     height:80%;
     z-index: 99;
@@ -49,13 +51,13 @@ export const RightWrapper = styled.div`
 `;
 
 export const MoiveName = styled.h1`
-    font-size:20px;
+    font-size:24px;
     margin: 20px 0;
 `;
 
 export const GenresWrapper = styled.ul`
-    overflow:hidden;
-    margin: 20px 0;
+  overflow: hidden;
+  margin: 20px 0;
 `;
 
 export const GenresItem = styled.li`
@@ -64,22 +66,16 @@ export const GenresItem = styled.li`
     padding: 5px;
     font-size:14px;
     text-align: center;
-    line-height: 30px;
+    line-height: 25px;
     margin: 0 10px 10px 0;
     border-radius: 4px;
     text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
 `;
 
 export const MoiveOverView = styled.div`
-    height: 100px;
     width: 100%;
     overflow:auto;
     margin: 20px 0;
 `;
 
-export const RightCompanys = styled.div`
-    width: 100%;
-    height: 100px;
-    background-color: rgb(192, 188, 188); 
-`;
 

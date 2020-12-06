@@ -1,7 +1,7 @@
 import {GET_SIDEBAR_VALUE} from '../actionConstants'
 
 const initialState = {
-    bIsSidebarShow: false
+    bIsSidebarShow: true
 }
 
 const sideBar = (state = initialState, action) => {

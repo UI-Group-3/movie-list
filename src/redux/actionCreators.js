@@ -1,15 +1,15 @@
-import * as actionTypes from './actionConstants';
+import { act } from "react-dom/test-utils";
+import * as actionTypes from "./actionConstants";
 
-export const mouseEnter = (id) => (
-    {
-        type: actionTypes.MOUSE_ENTER,
-        payload: { id }
-    });
+export const mouseEnter = (id) => ({
+    type: actionTypes.MOUSE_ENTER,
+    payload: { id },
+});
 
 export const mouseLeave = (id) => ({
     type: actionTypes.MOUSE_LEAVE,
-    payload: { id }
-})
+    payload: { id },
+});
 
 export const clickLiked = (data) => ({
     type: actionTypes.CLICK_LIKED,
@@ -19,43 +19,40 @@ export const clickLiked = (data) => ({
 export const getMovieList = (data) => ({
     type: actionTypes.GET_MOVIE_LISTS,
     payload: {
-        data
-    }
-})
+        data,
+    },
+});
 
 export const getSidebarStatus = (val) => ({
     type: actionTypes.GET_SIDEBAR_VALUE,
     payload: {
-        val
-    }
-})
+        val,
+    },
+});
 export const clickSort = (id) => ({
     type: actionTypes.CLICK_SORT,
-    id
-
-})
-
+    id,
+});
 
 export const prevPage = (page) => ({
     type: actionTypes.PREV_PAGE,
     payload: {
-        page
-    }
-})
+        page,
+    },
+});
 export const nextPage = (page) => ({
     type: actionTypes.NEXT_PAGE,
     payload: {
-        page
-    }
-})
-
+        page,
+    },
+});
 
 export const getMovieGenres = (data) => {
     return {
         type: actionTypes.GET_MOVIE_GENRES,
         payload: {
-            data
-        }
+            data,
+        },
     };
 };
 
@@ -63,8 +60,8 @@ export const setClickValue = (id) => {
     return {
         type: actionTypes.SET_CLICK_VALUE,
         payload: {
-            id
-        }
+            id,
+        },
     };
 };
 
@@ -73,6 +70,15 @@ export const setBlockValue = (data) => {
         type: actionTypes.SET_BLOCK_VALUE,
         payload: {
             data
+        }
+    };
+};
+
+export const setItemDetailValue = (id) => {
+    return {
+        type: actionTypes.SET_ITEM_DETAIL_VALUE,
+        payload: {
+            id
         }
     };
 };

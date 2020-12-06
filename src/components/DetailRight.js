@@ -1,19 +1,14 @@
 import React from 'react';
-import { RightWrapper, RightCompanys, MoiveOverView, MoiveName } from '../style/moiveDetail';
+import { RightWrapper, MoiveOverView, MoiveName } from '../style/moiveDetail';
 import DetailGenres from './RightGenres';
 
+const DetailRight = ({ itemDetail }) => {
 
-const DetailRight = () => {
     return (
         <RightWrapper>
-            <MoiveName>MoiveName</MoiveName>
-            <DetailGenres></DetailGenres>
-            <MoiveOverView>wertyuiohgfdsawertyuiohgfdsawerty
-            uiohgfdsawertyuiohgfdsawertyuiohgfdsawertyuiohgfdsawerty
-                uiohgfdsawertyuiohgfdsawertyuiohgfdsa</MoiveOverView>
-            <RightCompanys>xxxxxxxxwertyuiohgfdsawe
-            rtyuiohgfdsawertyuiohgfdsawertyuiohgfd
-                sawertyuiohgfdsawertyuiohgfdsawertyuiohgf</RightCompanys>
+            <MoiveName>{itemDetail[0].title}  ({itemDetail[0].release_date})</MoiveName>
+            <DetailGenres geners={itemDetail[0].genre_ids}></DetailGenres>
+            <MoiveOverView>OverView:  {itemDetail[0].overview}</MoiveOverView>
         </RightWrapper>
     )
 }
