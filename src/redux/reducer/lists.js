@@ -1,7 +1,11 @@
 import Sort from "../../components/Sort";
 import * as actionTypes from "../actionConstants";
 const initialState = {
-    isLiked: false,
+    // isLiked: false,
+    isClickedBlockList: false,
+    isClickedLikeList: false,
+    blockLists: [],
+    likeLists: [],
     movieLists: [],
     page: 1,
     totalPage: 500,
@@ -11,117 +15,143 @@ const initialState = {
 };
 
 const listsState = (state = initialState, action) => {
-  switch (action.type) {
-    case actionTypes.MOUSE_ENTER:
-      return {
-        ...state,
-        movieLists: state.movieLists.map((each) => {
-          if (each.id === action.payload.id) {
+    switch (action.type) {
+        case actionTypes.MOUSE_ENTER:
             return {
-              ...each,
-              mouseIn: true,
+                ...state,
+                movieLists: state.movieLists.map((each) => {
+                    if (each.id === action.payload.id) {
+                        return {
+                            ...each,
+                            mouseIn: true,
+                        };
+                    }
+                    return each;
+                }),
             };
-          }
-          return each;
-        }),
-      };
 
-    case actionTypes.MOUSE_LEAVE:
-      return {
-        ...state,
-        movieLists: state.movieLists.map((each) => {
-          if (each.id === action.payload.id) {
+        case actionTypes.MOUSE_LEAVE:
             return {
-              ...each,
-              mouseIn: false,
+                ...state,
+                movieLists: state.movieLists.map((each) => {
+                    if (each.id === action.payload.id) {
+                        return {
+                            ...each,
+                            mouseIn: false,
+                        };
+                    }
+                    return each;
+                }),
             };
-          }
-          return each;
-        }),
-      };
-    case actionTypes.CLICK_LIKED:
-      return {
-        ...state,
-        movieLists: state.movieLists.map((each) => {
-          if (each.id === action.payload.id) {
-            if (each.isLiked === false) {
-              return {
-                ...each,
-                isLiked: true,
-              };
-            } else {
-              return {
-                ...each,
-                isLiked: false,
-              };
+
+        case actionTypes.CLICK_LIKED:
+            return {
+                ...state,
+                likeLists: [...state.likeLists, action.payload.data],
+                movieLists: state.movieLists.map(each => {
+                    if (each.id === action.payload.data.id) {
+                        if (each.isLiked === false) {
+                            return {
+                                ...each,
+                                isLiked: true
+                            };
+                        } else {
+                            return {
+                                ...each,
+                                isLiked: false
+                            };
+                        }
+                    }
+                    return each;
+                })
             }
-          }
-          return each;
-        }),
-      };
-    case actionTypes.GET_MOVIE_LISTS: {
-      return {
-        ...state,
-        movieLists: [...action.payload.data].map((each) => {
-          return {
-            ...each,
-            isLiked: false,
-            mouseIn: false,
-            isBlocked: false,
-          };
-        }),
-      };
-    }
-    case actionTypes.CLICK_SORT:
-      const newSortList = state.sortBy.map((each) => {
-        if (each.id === action.id) each.isSort = !each.isSort;
-        return each;
-      });
 
-      const currentSort = state.sortBy[action.id - 1];
-      const sortedMovieList = sortMovies(
-        currentSort.name,
-        [...state.movieLists],
-        currentSort.isSort
-      );
 
-      console.log(sortedMovieList);
+        case actionTypes.GET_MOVIE_LISTS: {
+            return {
+                ...state,
+                movieLists: [...action.payload.data].map((each) => {
+                    return {
+                        ...each,
+                        isLiked: false,
+                        mouseIn: false,
+                        isBlocked: false,
+                    };
+                }),
+            };
+        }
+        case actionTypes.CLICK_SORT:
+            const newSortList = state.sortBy.map((each) => {
+                if (each.id === action.id) each.isSort = !each.isSort;
+                return each;
+            });
 
-      return {
-        ...state,
-        sortBy: newSortList,
-        movieLists: sortedMovieList,
-      };
+            const currentSort = state.sortBy[action.id - 1];
+            const sortedMovieList = sortMovies(
+                currentSort.name,
+                [...state.movieLists],
+                currentSort.isSort
+            );
 
-    case actionTypes.PREV_PAGE:
-      return {
-        ...state,
-        page: action.payload.page,
-      };
+            console.log(sortedMovieList);
 
-    case actionTypes.NEXT_PAGE:
-      return {
-        ...state,
-        page: action.payload.page,
-      };
+            return {
+                ...state,
+                sortBy: newSortList,
+                movieLists: sortedMovieList,
+            };
 
-    case actionTypes.SET_BLOCK_VALUE:
-      return {
-        ...state,
-        movieLists: state.movieLists
-          .map((each) => {
-            if (each.id === action.payload.id) {
-              return {
-                ...each,
-                isBlocked: true,
-              };
+        case actionTypes.PREV_PAGE:
+            return {
+                ...state,
+                page: action.payload.page,
+            };
+
+        case actionTypes.NEXT_PAGE:
+            return {
+                ...state,
+                page: action.payload.page,
+            };
+
+        case actionTypes.SET_BLOCK_VALUE:
+
+            const newList = state.movieLists.map(each => {
+                if (each.id === action.payload.data.id) {
+                    return {
+                        ...each,
+                        isBlocked: true
+                    };
+                }
+                return each;
+            }).filter(each => {
+                return each.isBlocked === false
+            });
+
+            return {
+                ...state,
+                blockLists: [...state.blockLists, action.payload.data],
+                movieLists: newList
             }
-            return each;
-          })
-          .filter((movie) => {
-            return movie.isBlocked === false;
-          }),
-      };
+        case actionTypes.SET_CLICK_BLOCKLIST_VALUE:
+            return {
+                ...state,
+                isClickedLikeList: false,
+                isClickedBlockList: true
+            }
+
+        case actionTypes.SET_CLICK_LIKELIST_VALUE:
+            return {
+                ...state,
+                isClickedBlockList: false,
+                isClickedLikeList: true
+            }
+
+        case actionTypes.SET_CLICK_MOVIELIST_VALUE:
+            return {
+                ...state,
+                isClickedBlockList: false,
+                isClickedLikeList: false
+            }
         case actionTypes.SET_ITEM_DETAIL_VALUE:
             return {
                 ...state,
@@ -135,36 +165,35 @@ const listsState = (state = initialState, action) => {
 
             }
 
-
-    default:
-      return state;
-  }
+        default:
+            return state;
+    }
 };
 
 const sortMovies = (method, list, descend) => {
-  console.log(list, method, descend);
-  switch (method) {
-    case "Sort By Name":
-      return list.sort((a, b) => {
-        let v = a.title.localeCompare(b.title);
-        return descend ? v : -v;
-      });
+    console.log(list, method, descend);
+    switch (method) {
+        case "Sort By Name":
+            return list.sort((a, b) => {
+                let v = a.title.localeCompare(b.title);
+                return descend ? v : -v;
+            });
 
-    case "Sort By Time":
-      return list.sort((a, b) => {
-        let v = Date.parse(b.release_date) - Date.parse(a.release_date);
-        return descend ? v : -v;
-      });
+        case "Sort By Time":
+            return list.sort((a, b) => {
+                let v = Date.parse(b.release_date) - Date.parse(a.release_date);
+                return descend ? v : -v;
+            });
 
-    case "Sort By Rating":
-      return list.sort((a, b) => {
-        let v = +b.vote_average - +a.vote_average;
-        return descend ? v : -v;
-      });
+        case "Sort By Rating":
+            return list.sort((a, b) => {
+                let v = +b.vote_average - +a.vote_average;
+                return descend ? v : -v;
+            });
 
-    default:
-      return;
-  }
+        default:
+            return;
+    }
 };
 
 export default listsState;
