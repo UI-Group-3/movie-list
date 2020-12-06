@@ -7,13 +7,13 @@ export const DetailWrapper = styled.div`
     font-family: Georgia, serif; 
     width:1100px;
     height:500px;
-    margin:50px auto;  
+    margin:10px auto; 
 `;
 
 export const Close = styled.button`
-    position: absolute;
-    top: 10px;
-    right: 20px;
+    position:fixed;
+    top:170px;
+    right:190px;
     width: 80px;
     height: 30px;
     border-radius:5px;
@@ -23,8 +23,7 @@ export const Close = styled.button`
     font-weight:bolder;
 `;
 
-export const Upper = styled.div`
-    
+export const Upper = styled.div`   
     display:flex;
     justify-content:center;
     flex-wrap:wrap;
@@ -35,7 +34,9 @@ export const Upper = styled.div`
     z-index:1;
 `;
 
-export const LeftImg = styled.img`
+export const LeftImg = styled.img.attrs({
+    alt: ""
+})`
   width: 30%;
   height: 80%;
   margin-right: 100px;

@@ -16,34 +16,6 @@ const initialState = {
 
 const listsState = (state = initialState, action) => {
     switch (action.type) {
-        case actionTypes.MOUSE_ENTER:
-            return {
-                ...state,
-                movieLists: state.movieLists.map((each) => {
-                    if (each.id === action.payload.id) {
-                        return {
-                            ...each,
-                            mouseIn: true,
-                        };
-                    }
-                    return each;
-                }),
-            };
-
-        case actionTypes.MOUSE_LEAVE:
-            return {
-                ...state,
-                movieLists: state.movieLists.map((each) => {
-                    if (each.id === action.payload.id) {
-                        return {
-                            ...each,
-                            mouseIn: false,
-                        };
-                    }
-                    return each;
-                }),
-            };
-
         case actionTypes.CLICK_LIKED:
             return {
                 ...state,
@@ -92,9 +64,6 @@ const listsState = (state = initialState, action) => {
                 [...state.movieLists],
                 currentSort.isSort
             );
-
-            console.log(sortedMovieList);
-
             return {
                 ...state,
                 sortBy: newSortList,
@@ -171,7 +140,6 @@ const listsState = (state = initialState, action) => {
 };
 
 const sortMovies = (method, list, descend) => {
-    console.log(list, method, descend);
     switch (method) {
         case "Sort By Name":
             return list.sort((a, b) => {

@@ -1,16 +1,6 @@
 import { act } from "react-dom/test-utils";
 import * as actionTypes from "./actionConstants";
 
-export const mouseEnter = (id) => ({
-    type: actionTypes.MOUSE_ENTER,
-    payload: { id },
-});
-
-export const mouseLeave = (id) => ({
-    type: actionTypes.MOUSE_LEAVE,
-    payload: { id },
-});
-
 export const clickLiked = (data) => ({
     type: actionTypes.CLICK_LIKED,
     payload: { data }
