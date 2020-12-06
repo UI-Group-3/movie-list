@@ -8,7 +8,7 @@ const initialState = {
     likeLists: [],
     movieLists: [],
     page: 1,
-    totalPage: 3,
+    totalPage: 500,
     isSort: true,
     sortBy: [{ id: 1, name: "Sort By Name", isSort: true }, { id: 2, name: "Sort By Time", isSort: true }, { id: 3, name: "Sort By Rating", isSort: true }],
     itemDetail: []
