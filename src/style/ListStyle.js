@@ -30,8 +30,8 @@ export const SortItem = styled.div`
 `;
 
 export const SortInput = styled.input.attrs({
-    type: "button",
-    name: "sort",
+  type: "button",
+  name: "sort",
 })`
   width: 128px;
   height: 32px;
@@ -80,12 +80,18 @@ export const ItemBottomWrapper = styled.div`
    display:none;
 `;
 
-export const Liked = styled.div`
+export const Liked = styled.button`
   margin-right: 25px;
+  background: none;
+  border:none;
+  outline:none;  
 `;
 
-export const Blocked = styled.div`
+export const Blocked = styled.button`
   float: left;
+  background: none;
+  border:none;
+  outline:none; 
   margin-right: 25px;
 `;
 
