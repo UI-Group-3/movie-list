@@ -10,12 +10,13 @@ import ListItem from '../components/ListItem'
 class List extends Component {
 
     render() {
-        const { sortBy, handleClickSort, movieLists, page, totalPage, handleMouseEnter, handleMouseLeave } = this.props;
+        const { sortBy, handleClickSort, movieLists, page, totalPage } = this.props;
+
         return (
-            <ListWrapper >
+            <ListWrapper className="List" >
                 <Sort sortBy={sortBy} handleClickSort={handleClickSort} ></Sort>
                 <Pagination page={page} totalPage={totalPage}></Pagination>
-                <ListItem page={page} movieLists={movieLists} handleMouseEnter={handleMouseEnter} handleMouseLeave={handleMouseLeave}></ListItem>
+                <ListItem page={page} movieLists={movieLists} ></ListItem>
             </ListWrapper>
 
         )
@@ -34,12 +35,6 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        handleMouseEnter(id) {
-            dispatch(actionCreators.mouseEnter(id));
-        },
-        handleMouseLeave(id) {
-            dispatch(actionCreators.mouseLeave(id));
-        },
         handleFecthMovieList(data) {
             dispatch(actionCreators.getMovieList(data));
         },

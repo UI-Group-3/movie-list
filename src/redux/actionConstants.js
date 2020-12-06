@@ -1,5 +1,3 @@
-export const MOUSE_ENTER = "MOUSE_ENTER";
-export const MOUSE_LEAVE = "MOUSE_LEAVE";
 export const CLICK_LIKED = "CLICK_LIKED";
 export const CLICK_SORT = "CLICK_SORT";
 
