@@ -12,7 +12,7 @@ const ListItemBottom = ({ isLiked, movie }) => {
                 {isLiked ? (<i className="iconfont liked">&#xe8ab;</i>) : (<i className="iconfont">&#xe623;</i>)}
             </Liked>
 
-            <Blocked onClick={() => dispatch(setBlockValue(movie))}>
+            <Blocked onClick={() => dispatch(setBlockValue(movie))} >
                 <i className="iconfont ">&#xe630;</i>
             </Blocked>
 

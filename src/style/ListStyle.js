@@ -30,8 +30,8 @@ export const SortItem = styled.div`
 `;
 
 export const SortInput = styled.input.attrs({
-    type: "button",
-    name: "sort",
+  type: "button",
+  name: "sort",
 })`
   width: 128px;
   height: 32px;
