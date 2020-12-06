@@ -1,7 +1,6 @@
 import React from "react";
-import styled from "styled-components";
 import { useMediaQuery } from "react-responsive";
-import { Search, SearchText, SearchButton } from "../style/header";
+import { Search, SearchText, SearchButton, SearchInfo } from "../style/header";
 
 function Searchbar() {
   const bIsDesktop = useMediaQuery({
@@ -10,8 +9,11 @@ function Searchbar() {
 
   return (
     <Search className={bIsDesktop ? "top" : "side"}>
-      <SearchText placeholder="Please input a movie name!" />
-      <SearchButton type="submit" value="Search" />
+      <SearchText />
+      <i className="iconfont zoom">&#xe717;</i>
+      <SearchInfo >
+
+      </SearchInfo>
     </Search>
   );
 }

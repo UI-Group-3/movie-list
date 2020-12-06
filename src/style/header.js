@@ -58,6 +58,7 @@ export const TMDBIcon = styled.img`
 `;
 
 export const Search = styled.div`
+  position:relative;  
   height: 64px;
   padding: 0;
   display: flex;
@@ -65,25 +66,56 @@ export const Search = styled.div`
   align-items: center;
   flex-wrap: wrap;
   &.top {
-    width: 512px;
+    width: 400px;
   }
   &.side {
-    width: 256px;
+    width: 225px;
+  }
+  .zoom{
+    position: absolute;
+    font-size:20px;
+    top:16px;
+    right: 0px;
+    width:32px;
+    height: 33px;
+    line-height: 33px;
+    text-align: center;
+    border-radius:0 5px 5px 0;
+    background: #888;
   }
 `;
 
-export const SearchText = styled.input`
+export const SearchText = styled.input.attrs({
+  placeholder: "Please input a movie name!"
+})`
   height: 32px;
-  width: 256px;
+  width: 100%;
+  border: none;
+  outline: none;
+  border-radius: 5px;
   background: #fff;
-  margin: 8px 8px;
-  padding: 4px;
+  margin: 8px 15px;
+  padding:0 5px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, .2);
 `;
 
-export const SearchButton = styled.input`
+export const SearchButton = styled.input.attrs({
+  type: "submit",
+  value: "Search"
+})`
   height: 32px;
   width: 64px;
   margin: 8px 8px;
+`;
+
+export const SearchInfo = styled.div`
+    position:absolute;
+    left:0;
+    top: 56px;
+    width: 240px;
+    padding: 0 20px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, .2);
+	background: #fff;
 `;
 
 export const showAnim = keyframes`
