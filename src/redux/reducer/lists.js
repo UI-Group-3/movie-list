@@ -1,11 +1,9 @@
-import Sort from "../../components/Sort";
 import * as actionTypes from "../actionConstants";
 const initialState = {
-    // isLiked: false,
     isClickedBlockList: false,
     isClickedLikeList: false,
-    blockLists: [],
     likeLists: [],
+    blockLists: [],
     movieLists: [],
     page: 1,
     totalPage: 500,
@@ -23,9 +21,8 @@ const listsState = (state = initialState, action) => {
         case actionTypes.CLICK_LIKED:
             return {
                 ...state,
-                likeLists: [...state.likeLists, action.payload.data],
                 movieLists: state.movieLists.map((each) => {
-                    if (each.id === action.payload.data.id) {
+                    if (each.id === action.payload.id) {
                         if (each.isLiked === false) {
                             return {
                                 ...each,
@@ -89,42 +86,25 @@ const listsState = (state = initialState, action) => {
         case actionTypes.SET_BLOCK_VALUE:
             const newList = state.movieLists
                 .map((each) => {
-                    if (each.id === action.payload.data.id) {
-                        return {
-                            ...each,
-                            isBlocked: true,
-                        };
+                    if (each.id === action.payload.id) {
+                        if (each.isBlocked === false) {
+                            return {
+                                ...each,
+                                isBlocked: true,
+                            };
+                        } else {
+                            return {
+                                ...each,
+                                isBlocked: false,
+                            };
+                        }
                     }
                     return each;
                 })
-                .filter((each) => {
-                    return each.isBlocked === false;
-                });
 
             return {
                 ...state,
-                blockLists: [...state.blockLists, action.payload.data],
-                movieLists: newList,
-            };
-        case actionTypes.SET_CLICK_BLOCKLIST_VALUE:
-            return {
-                ...state,
-                isClickedLikeList: false,
-                isClickedBlockList: true,
-            };
-
-        case actionTypes.SET_CLICK_LIKELIST_VALUE:
-            return {
-                ...state,
-                isClickedBlockList: false,
-                isClickedLikeList: true,
-            };
-
-        case actionTypes.SET_CLICK_MOVIELIST_VALUE:
-            return {
-                ...state,
-                isClickedBlockList: false,
-                isClickedLikeList: false,
+                movieLists: newList
             };
         case actionTypes.SET_ITEM_DETAIL_VALUE:
             return {
@@ -132,11 +112,42 @@ const listsState = (state = initialState, action) => {
                 itemDetail: state.movieLists.filter((each) => {
                     if (each.id === action.payload.id) {
                         return {
-                            each,
+                            each
                         };
                     }
                 }),
             };
+
+        case actionTypes.ADD_LIKE_LIST:
+            return {
+                ...state,
+                likeLists: state.movieLists.filter(each => {
+                    return each.isLiked === true
+                })
+            }
+
+        case actionTypes.REMOVE_LIKE_LIST:
+            return {
+                ...state,
+                likeLists: state.likeLists.filter(each => {
+                    return each.id !== action.payload.id
+                })
+            }
+
+        case actionTypes.REMOVE_BLOCK_LIST:
+            return {
+                ...state,
+                blockLists: state.blockLists.filter(each => {
+                    return each.id !== action.payload.id
+                })
+            }
+        case actionTypes.ADD_BLOCK_LIST:
+            return {
+                ...state,
+                blockLists: state.movieLists.filter(each => {
+                    return each.isBlocked === true
+                })
+            }
 
         default:
             return state;

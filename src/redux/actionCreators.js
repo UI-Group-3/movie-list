@@ -1,9 +1,10 @@
-import { act } from "react-dom/test-utils";
 import * as actionTypes from "./actionConstants";
 
-export const clickLiked = (data) => ({
+export const clickLiked = (id) => ({
     type: actionTypes.CLICK_LIKED,
-    payload: { data }
+    payload: {
+        id
+    }
 })
 
 export const getMovieList = (data) => ({
@@ -55,12 +56,10 @@ export const setClickValue = (id) => {
     };
 };
 
-export const setBlockValue = (data) => {
+export const setBlockValue = (id) => {
     return {
         type: actionTypes.SET_BLOCK_VALUE,
-        payload: {
-            data
-        }
+        payload: { id }
     };
 };
 
@@ -73,20 +72,36 @@ export const setItemDetailValue = (id) => {
     };
 };
 
-export const setClickBlockListValue = () => {
-    return {
-        type: actionTypes.SET_CLICK_BLOCKLIST_VALUE,
-    };
-};
 
-export const setClickLikeListValue = () => {
+export const addLikeList = () => {
     return {
-        type: actionTypes.SET_CLICK_LIKELIST_VALUE,
-    };
-};
+        type: actionTypes.ADD_LIKE_LIST
+    }
+}
 
-export const setClickMovieListValue = () => {
+export const removeLikeList = (id) => {
     return {
-        type: actionTypes.SET_CLICK_MOVIELIST_VALUE,
-    };
-};
+        type: actionTypes.REMOVE_LIKE_LIST,
+        payload: { id }
+    }
+}
+
+export const removeBlockList = (id) => {
+    return {
+        type: actionTypes.REMOVE_BLOCK_LIST,
+        payload: { id }
+    }
+}
+
+export const addBlockList = () => {
+    return {
+        type: actionTypes.ADD_BLOCK_LIST
+    }
+}
+
+export const clickDisliked = (id) => ({
+    type: actionTypes.CLICK_DISLIKED,
+    payload: {
+        id
+    }
+})
