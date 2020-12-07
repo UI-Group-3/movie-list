@@ -8,19 +8,17 @@ import ListItem from '../components/ListItem';
 
 
 class List extends Component {
-
     render() {
         const { sortBy, handleClickSort, movieLists, page, totalPage } = this.props;
         return (
-            <ListWrapper className="List container" >
-                <Sort sortBy={sortBy} handleClickSort={handleClickSort} ></Sort>
+            <ListWrapper className="List container">
+                <Sort sortBy={sortBy} handleClickSort={handleClickSort}></Sort>
                 <Pagination page={page} totalPage={totalPage}></Pagination>
-                <ListItem page={page} movieLists={movieLists} ></ListItem>
+                <ListItem page={page} movieLists={movieLists}></ListItem>
             </ListWrapper>
-
-        )
+        );
     }
-};
+}
 
 const mapStateToProps = (state) => {
     return {
@@ -39,9 +37,8 @@ const mapDispatchToProps = (dispatch) => {
         },
         handleClickSort(id) {
             dispatch(actionCreators.clickSort(id));
-        }
-
-    }
-}
+        },
+    };
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(List);
