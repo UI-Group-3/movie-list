@@ -40,10 +40,12 @@ export const NavItem = styled.li`
   font-size: 24px;
   font-weight: bold;
   color: #2278b5;
-
   &:hover {
-    background-color: #2278b5;
-    color: white;
+    background: #e8ebed;
+  }
+  &.afterClick {
+    background:#2278b5;
+    color:white;
   }
 `;
 
@@ -51,7 +53,6 @@ export const TMDBIcon = styled.img`
   &.top {
     height: 32px;
   }
-
   &.side {
     height: 16px;
   }
@@ -172,24 +173,10 @@ export const Side = styled.div`
   &.hide {
     animation-name: ${hideAnim};
   }
+  
+  
 `;
 
-export const SideList = styled.ul`
-  list-style: none;
-  padding: 0;
-`;
-export const SideItem = styled.li`
-  padding: 8px;
-  margin: 32px 0;
-  font-size: 24px;
-  font-weight: bold;
-  color: #2278b5;
-  text-align: center;
-  &:hover {
-    background-color: #2278b5;
-    color: white;
-  }
-`;
 export const SideButton = styled.button`
   z-index: 999;
   font-size: 32px;

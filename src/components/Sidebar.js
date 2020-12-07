@@ -4,7 +4,8 @@ import Icon from "./Icon";
 import { selectHeader, selectSidebar } from "../redux/selectors";
 import { setSidebarStatus } from "../redux/actionCreators";
 import { useDispatch, useSelector } from "react-redux";
-import { Side, SideList, SideItem, SideButton } from "../style/header";
+import { Side, SideButton } from "../style/header";
+import NavsList from './NavsList'
 
 function Sidebar() {
   const sidebar_status = useSelector(selectSidebar);
@@ -15,11 +16,12 @@ function Sidebar() {
       <Side className={sidebar_status ? "show" : "hide"}>
         <Icon className="side" />
         <Searchbar />
-        <SideList>
+        {/* <SideList>
           <SideItem>Movie List</SideItem>
           <SideItem>Liked List</SideItem>
           <SideItem>Blocked List</SideItem>
-        </SideList>
+        </SideList> */}
+        <NavsList></NavsList>
       </Side>
       <SideButton
         onClick={() =>
