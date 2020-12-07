@@ -47,11 +47,8 @@ export const NavItem = styled.li`
   font-weight: bold;
   color: #2278b5;
   &:hover {
-    background: #e8ebed;
-  }
-  &.afterClick {
-    background:#2278b5;
-    color:white;
+    background-color: #3270ae;
+    color: white;
   }
   @media (max-width: 1199px) {
     margin: 32px 0;
@@ -68,8 +65,8 @@ export const TMDBIcon = styled.img`
   }
 `;
 
-export const Search = styled.div`
-  position:relative;  
+export const Search = styled.section`
+  position: relative;
   height: 64px;
   padding: 0;
   display: flex;
@@ -82,23 +79,23 @@ export const Search = styled.div`
   &.side {
     width: 225px;
   }
-  .zoom{
+  .zoom {
     position: absolute;
-    font-size:20px;
-    top:16px;
+    font-size: 20px;
+    top: 16px;
     right: 0px;
-    width:32px;
+    width: 32px;
     height: 33px;
     line-height: 33px;
     text-align: center;
-    border-radius:0 5px 5px 0;
+    border-radius: 0 5px 5px 0;
     background: #888;
   }
 `;
 
 export const SearchText = styled.input.attrs({
   type: "text",
-  placeholder: "Please input a movie name!"
+  placeholder: "Please input a movie name!",
 })`
   height: 32px;
   width: 100%;
@@ -107,42 +104,42 @@ export const SearchText = styled.input.attrs({
   border-radius: 5px;
   background: #fff;
   margin: 8px 20px;
-  padding:0 5px;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, .2);
+  padding: 0 5px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 `;
 
 export const SearchInfo = styled.div`
-  position:absolute;
-  left:20px;
+  position: absolute;
+  left: 20px;
   top: 50px;
   width: 350px;
-  color:#666;
-  font-size:13px;
-  box-shadow: 0 0 8px rgba(0, 0, 0, .2);
-  background: #fff;  
+  color: #666;
+  font-size: 13px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+  background: #fff;
 `;
 
 export const SearchItem = styled.div`
-  width:100%;
-  box-sizing:border-box;
-  padding:5px 10px;
-  line-height:100%;
-  text-decoration:none;
-  border-bottom:1px solid #eee;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 5px 10px;
+  line-height: 100%;
+  text-decoration: none;
+  border-bottom: 1px solid #eee;
   display: flex;
   justify-content: flrx-start;
   img {
-    width:30px;
-    height:40px;
-    margin-right:10px
+    width: 30px;
+    height: 40px;
+    margin-right: 10px;
   }
   p {
-    color:#2278b5;
-    margin-bottom:5px;
+    color: #2278b5;
+    margin-bottom: 5px;
   }
   span {
-    color:#666;
-  }  
+    color: #666;
+  }
 `;
 
 export const showAnim = keyframes`
