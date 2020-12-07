@@ -11,7 +11,6 @@ class List extends Component {
 
     render() {
         const { sortBy, handleClickSort, movieLists, page, totalPage } = this.props;
-
         return (
             <ListWrapper className="List" >
                 <Sort sortBy={sortBy} handleClickSort={handleClickSort} ></Sort>
