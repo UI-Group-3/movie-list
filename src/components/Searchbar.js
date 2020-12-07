@@ -1,6 +1,6 @@
 import React from "react";
 import { useMediaQuery } from "react-responsive";
-import { Search, SearchText, SearchButton, SearchInfo } from "../style/header";
+import { Search, SearchText, SearchInfo } from "../style/header";
 
 function Searchbar() {
   const bIsDesktop = useMediaQuery({

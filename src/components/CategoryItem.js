@@ -11,7 +11,7 @@ const MemoCategoryItem = memo(({ genres_list }) => {
 
   useEffect(() => {
     dispatch(setTotalPage(movieLength));
-  }, [movieLength])
+  }, [movieLength, dispatch])
 
   return (
     <CategoryLabel className={`${isClicked ? "active" : "activeHover"}`}>

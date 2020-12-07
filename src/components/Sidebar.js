@@ -8,9 +8,7 @@ import {
   Side,
   SideList,
   SideItem,
-  SideButton,
-  showAnim,
-  hideAnim,
+  SideButton
 } from "../style/header";
 
 function Sidebar() {

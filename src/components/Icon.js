@@ -1,6 +1,5 @@
 import React from "react";
 import icon from "../assets/images/TMDB-icon.svg";
-import styled from "styled-components";
 import { TMDBIcon } from "../style/header";
 import { useMediaQuery } from "react-responsive";
 

@@ -17,15 +17,14 @@ import { Close } from './style/moiveDetail';
 const App = () => {
   const totalPage = 500;
   const dispatch = useDispatch();
-  let i = 0;
+
   useEffect(() => {
     axios.get(GENRES_API)
       .then(res => {
         dispatch(getMovieGenres(res.data.genres))
-        console.log(++i);
       })
       .catch(err => {
-
+        console.log(err)
       })
 
     axios
