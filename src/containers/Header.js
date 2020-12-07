@@ -17,7 +17,7 @@ const Header = () => {
     dispatch(setSidebarStatus(bIsDesktop, bIsDesktop));
   }, [bIsDesktop]);
 
-  return <div>{bIsDesktop ? <Navbar /> : <Sidebar />}</div>;
+  return <div>{bIsDesktop ? <Navbar role="navigation" /> : <Sidebar role="navigation"/>}</div>;
 };
 
 export default Header;

@@ -1,6 +1,5 @@
-import React from 'react'
-import { SortWrapper, SortItem, SortInput, } from '../style/ListStyle';
-
+import React from "react";
+import { SortWrapper, SortItem, SortInput } from "../style/ListStyle";
 
 const Sort = ({ sortBy, handleClickSort }) => {
   return (
@@ -8,7 +7,7 @@ const Sort = ({ sortBy, handleClickSort }) => {
       {sortBy.map((item) => {
         return (
           <SortItem key={item.id}>
-            <label htmlFor={item.id}>
+            <label id={item.id}>
               <SortInput
                 id={item.id}
                 onClick={() => {
