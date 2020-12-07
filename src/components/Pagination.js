@@ -5,7 +5,6 @@ import { prevPage, nextPage } from "../redux/actionCreators";
 
 const Pagination = ({ page, totalPage }) => {
   const dispatch = useDispatch();
-
   return (
     <PaginationWrapper>
       <Button
@@ -18,7 +17,7 @@ const Pagination = ({ page, totalPage }) => {
         current page {page} / {totalPage}
       </PageInfo>
       <Button
-        disabled={`${page === 500 ? "disabled" : ""}`}
+        disabled={`${page === totalPage ? "disabled" : ""}`}
         onClick={() => dispatch(nextPage(page + 1))}
       >
         next

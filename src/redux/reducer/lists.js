@@ -1,7 +1,5 @@
 import * as actionTypes from "../actionConstants";
 const initialState = {
-    isClickedBlockList: false,
-    isClickedLikeList: false,
     likeLists: [],
     blockLists: [],
     movieLists: [],
@@ -112,11 +110,7 @@ const listsState = (state = initialState, action) => {
             return {
                 ...state,
                 itemDetail: state.movieLists.filter((each) => {
-                    if (each.id === action.payload.id) {
-                        return {
-                            each
-                        };
-                    }
+                    return each.id === action.payload.id
                 }),
             };
 
@@ -173,6 +167,12 @@ const listsState = (state = initialState, action) => {
                 ...state,
                 searchInput: "",
                 searchList: []
+            }
+
+        case actionTypes.SET_TOTAL_PAGE:
+            return {
+                ...state,
+                totalPage: action.payload.totalPage
             }
 
         default:

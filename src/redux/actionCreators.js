@@ -110,9 +110,16 @@ export const addBlockList = () => {
 export const clickDisliked = (id) => ({
   type: actionTypes.CLICK_DISLIKED,
   payload: {
-    id,
-  },
-});
+    id
+  }
+})
+
+export const setTotalPage = (totalPage) => ({
+  type: actionTypes.SET_TOTAL_PAGE,
+  payload: {
+    totalPage
+  }
+})
 
 export const handelSeachValue = (newSearchValue) => {
   return {
