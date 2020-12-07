@@ -4,9 +4,9 @@ import { Link } from 'react-router-dom';
 import { selectSidebar } from "../redux/selectors";
 import { useSelector } from "react-redux";
 
+
 const NavsList = () => {
     const sidebar_status = useSelector(selectSidebar);
-
     const initState = {
         movieClick: true,
         likeClick: false,
@@ -19,8 +19,7 @@ const NavsList = () => {
             movieClick: true,
             likeClick: false,
             blockClick: false
-        })
-
+        });
     }
 
     function handleLike() {
@@ -28,7 +27,7 @@ const NavsList = () => {
             movieClick: false,
             likeClick: true,
             blockClick: false
-        })
+        });
     }
 
     function handleBlock() {
@@ -36,7 +35,7 @@ const NavsList = () => {
             movieClick: false,
             likeClick: false,
             blockClick: true
-        })
+        });
     }
 
     return (

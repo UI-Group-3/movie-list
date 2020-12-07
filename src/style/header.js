@@ -32,6 +32,12 @@ export const Down = styled.div`
 export const NavList = styled.ul`
   list-style: none;
   padding: 0;
+  @media (max-width: 1199px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
 `;
 export const NavItem = styled.li`
   float: left;
@@ -48,7 +54,7 @@ export const NavItem = styled.li`
     color:white;
   }
   @media (max-width: 1199px) {
-    margin: 32px;
+    margin: 32px 0;
     text-align:center;
 }
 `;
@@ -175,8 +181,6 @@ export const Side = styled.div`
   &.hide {
     animation-name: ${hideAnim};
   }
-  
-  
 `;
 
 export const SideButton = styled.button`

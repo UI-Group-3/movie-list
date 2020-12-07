@@ -18,11 +18,9 @@ export const ListWrapper = styled.div`
   
   @media (max-width: 767px) {
     width:80%;
-    &.List,otherList{
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap; 
-    }
+    &.List,&.otherList{
+      justify-content: center;
+      }  
   }
   @media (min-width:768px ) {  
           width: 750px;
