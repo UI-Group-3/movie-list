@@ -15,6 +15,24 @@ export const ListWrapper = styled.div`
   width: 1100px;
   margin: 0 auto;
   box-sizing: border-box;
+  
+  @media (max-width: 767px) {
+    width:80%;
+    &.List,otherList{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; 
+    }
+  }
+  @media (min-width:768px ) {  
+          width: 750px;
+  }
+  @media (min-width:992px ) {
+          width: 970px;
+  }
+  @media (min-width: 1199px) {
+          width: 1100px;
+  }
 `;
 
 export const SortWrapper = styled.div`
@@ -22,6 +40,9 @@ export const SortWrapper = styled.div`
   width: 100%;
   color: #666;
   font-size: 14px;
+  @media (max-width:655px ) {
+    display:none;   
+}
 `;
 
 export const SortItem = styled.div`

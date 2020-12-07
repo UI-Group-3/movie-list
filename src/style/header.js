@@ -47,6 +47,10 @@ export const NavItem = styled.li`
     background:#2278b5;
     color:white;
   }
+  @media (max-width: 1199px) {
+    margin: 32px;
+    text-align:center;
+}
 `;
 
 export const TMDBIcon = styled.img`
@@ -132,9 +136,7 @@ export const SearchItem = styled.div`
   }
   span {
     color:#666;
-  }
-
-  
+  }  
 `;
 
 export const showAnim = keyframes`

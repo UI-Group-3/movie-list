@@ -7,7 +7,7 @@ import { setPlatformStyle, setSidebarStatus } from "../redux/actionCreators";
 
 const Header = () => {
   const bIsDesktop = useMediaQuery({
-    query: "(min-width: 1224px)",
+    query: "(min-width: 1199px)",
   });
 
   const dispatch = useDispatch();

@@ -1,10 +1,12 @@
-import React, { Component } from "react";
+import React, { Component, useRef } from "react";
 import { connect } from "react-redux";
 import { ListWrapper } from '../style/ListStyle';
 import Sort from '../components/Sort';
 import * as actionCreators from '../redux/actionCreators';
 import Pagination from '../components/Pagination';
-import ListItem from '../components/ListItem'
+import ListItem from '../components/ListItem';
+import useDimensions from "react-cool-dimensions";
+
 
 
 class List extends Component {
@@ -13,7 +15,7 @@ class List extends Component {
         const { sortBy, handleClickSort, movieLists, page, totalPage } = this.props;
 
         return (
-            <ListWrapper className="List" >
+            <ListWrapper className="List container" >
                 <Sort sortBy={sortBy} handleClickSort={handleClickSort} ></Sort>
                 <Pagination page={page} totalPage={totalPage}></Pagination>
                 <ListItem page={page} movieLists={movieLists} ></ListItem>
