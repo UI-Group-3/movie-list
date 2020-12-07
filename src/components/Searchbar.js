@@ -13,6 +13,7 @@ function Searchbar() {
   return (
     <Search className={bIsDesktop ? "top" : "side"}>
       <SearchText
+        aria-label="Input movie name here"
         value={searchInput}
         onChange={(e) => dispatch(handelSeachValue(e.target.value))}
       />
