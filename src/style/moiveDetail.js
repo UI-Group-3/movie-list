@@ -5,15 +5,18 @@ export const DetailWrapper = styled.div`
     background: url(${(props) => props.imgUrl});
     background-size:100% 100%;
     font-family: Georgia, serif; 
-    width:1100px;
-    height:500px;
     margin:10px auto; 
+    width: 80%;
+    height:70%;
+    @media (min-width: 1199px) {
+        width: 1100px;
+        height:500%
+      }
 `;
 
 export const Close = styled.button`
-    position:fixed;
-    top:170px;
-    right:190px;
+    display:block;
+    margin:0 auto; 
     width: 80px;
     height: 30px;
     border-radius:5px;

@@ -32,6 +32,12 @@ export const Down = styled.div`
 export const NavList = styled.ul`
   list-style: none;
   padding: 0;
+  @media (max-width: 1199px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
 `;
 export const NavItem = styled.li`
   float: left;
@@ -40,18 +46,20 @@ export const NavItem = styled.li`
   font-size: 24px;
   font-weight: bold;
   color: #2278b5;
-
   &:hover {
     background-color: #3270ae;
     color: white;
   }
+  @media (max-width: 1199px) {
+    margin: 32px 0;
+    text-align:center;
+}
 `;
 
 export const TMDBIcon = styled.img`
   &.top {
     height: 32px;
   }
-
   &.side {
     height: 16px;
   }
@@ -172,22 +180,6 @@ export const Side = styled.div`
   }
 `;
 
-export const SideList = styled.ul`
-  list-style: none;
-  padding: 0;
-`;
-export const SideItem = styled.li`
-  padding: 8px;
-  margin: 32px 0;
-  font-size: 24px;
-  font-weight: bold;
-  color: #2278b5;
-  text-align: center;
-  &:hover {
-    background-color: #2278b5;
-    color: white;
-  }
-`;
 export const SideButton = styled.button`
   z-index: 999;
   font-size: 32px;
