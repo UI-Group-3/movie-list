@@ -7,6 +7,8 @@ import { Provider } from "react-redux";
 import { Headericon } from "./static/iconfont/iconfont";
 import { GlobalStyle } from "./style.js";
 
+const root = document.getElementById("root");
+
 ReactDOM.render(
   <StrictMode>
     <Provider store={store}>
@@ -14,8 +16,8 @@ ReactDOM.render(
       <Headericon />
     </Provider>
     <GlobalStyle />
-  </StrictMode>,
-  document.getElementById("root")
+  </StrictMode>, root
+
 );
 
 // If you want to start measuring performance in your app, pass a function
