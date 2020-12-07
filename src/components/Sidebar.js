@@ -16,11 +16,6 @@ function Sidebar() {
       <Side className={sidebar_status ? "show" : "hide"}>
         <Icon className="side" />
         <Searchbar />
-        {/* <SideList>
-          <SideItem>Movie List</SideItem>
-          <SideItem>Liked List</SideItem>
-          <SideItem>Blocked List</SideItem>
-        </SideList> */}
         <NavsList></NavsList>
       </Side>
       <SideButton
