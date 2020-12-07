@@ -105,3 +105,14 @@ export const clickDisliked = (id) => ({
         id
     }
 })
+
+export const handelSeachValue = (newSearchValue) => {
+    return {
+        type: actionTypes.HANDEL_SEARCH_VALUE,
+        payload: { newSearchValue }
+    }
+}
+
+export const setSearchNull = () => ({
+    type: actionTypes.SET_SEARCH_INPUT_NULL
+})

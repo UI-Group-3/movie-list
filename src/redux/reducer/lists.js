@@ -5,6 +5,7 @@ const initialState = {
     likeLists: [],
     blockLists: [],
     movieLists: [],
+    searchList: [],
     page: 1,
     totalPage: 500,
     isSort: true,
@@ -14,6 +15,7 @@ const initialState = {
         { id: 3, name: "Sort By Rating", isSort: true },
     ],
     itemDetail: [],
+    searchInput: ""
 };
 
 const listsState = (state = initialState, action) => {
@@ -147,6 +149,30 @@ const listsState = (state = initialState, action) => {
                 blockLists: state.movieLists.filter(each => {
                     return each.isBlocked === true
                 })
+            }
+        case actionTypes.HANDEL_SEARCH_VALUE:
+            const searchValue = action.payload.newSearchValue.split(" ").join("").trim().toUpperCase();
+
+            if (searchValue.length === 0) {
+                return {
+                    ...state,
+                    searchInput: "",
+                    searchList: []
+                }
+            }
+            return {
+                ...state,
+                searchInput: action.payload.newSearchValue,
+                searchList: state.movieLists.filter(each => {
+                    return (each.title.split(" ").join("").toUpperCase()).match((action.payload.newSearchValue.split(" ").join("").trim().toUpperCase()))
+                }).slice(0, 5)
+            }
+
+        case actionTypes.SET_SEARCH_INPUT_NULL:
+            return {
+                ...state,
+                searchInput: "",
+                searchList: []
             }
 
         default:

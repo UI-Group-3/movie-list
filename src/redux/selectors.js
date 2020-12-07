@@ -22,3 +22,6 @@ export const selectListByGenre = (store) => {
     (item) => item.genre_ids.findIndex((i) => i === current) > -1
   );
 };
+
+export const selectSearchList = (store) => store.listState.searchList;
+export const selectSearchInput = (store) => store.listState.searchInput;
