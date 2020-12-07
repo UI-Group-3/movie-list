@@ -1,12 +1,11 @@
 import React from "react";
 import icon from "../assets/images/TMDB-icon.svg";
 import { TMDBIcon } from "../style/header";
-import { useMediaQuery } from "react-responsive";
+import { useSelector } from "react-redux";
+import { selectHeader } from "../redux/selectors";
 
 function Icon() {
-  const bIsDesktop = useMediaQuery({
-    query: "(min-width: 1224px)",
-  });
+  const bIsDesktop = useSelector(selectHeader);
 
   return (
     <TMDBIcon

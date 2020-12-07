@@ -86,6 +86,7 @@ export const Search = styled.div`
 `;
 
 export const SearchText = styled.input.attrs({
+  type: "text",
   placeholder: "Please input a movie name!"
 })`
   height: 32px;
@@ -94,28 +95,45 @@ export const SearchText = styled.input.attrs({
   outline: none;
   border-radius: 5px;
   background: #fff;
-  margin: 8px 15px;
+  margin: 8px 20px;
   padding:0 5px;
   box-shadow: 0 1px 2px rgba(0, 0, 0, .2);
 `;
 
-export const SearchButton = styled.input.attrs({
-  type: "submit",
-  value: "Search"
-})`
-  height: 32px;
-  width: 64px;
-  margin: 8px 8px;
+export const SearchInfo = styled.div`
+  position:absolute;
+  left:20px;
+  top: 50px;
+  width: 350px;
+  color:#666;
+  font-size:13px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, .2);
+  background: #fff;  
 `;
 
-export const SearchInfo = styled.div`
-    position:absolute;
-    left:0;
-    top: 56px;
-    width: 240px;
-    padding: 0 20px;
-    box-shadow: 0 0 8px rgba(0, 0, 0, .2);
-	background: #fff;
+export const SearchItem = styled.div`
+  width:100%;
+  box-sizing:border-box;
+  padding:5px 10px;
+  line-height:100%;
+  text-decoration:none;
+  border-bottom:1px solid #eee;
+  display: flex;
+  justify-content: flrx-start;
+  img {
+    width:30px;
+    height:40px;
+    margin-right:10px
+  }
+  p {
+    color:#2278b5;
+    margin-bottom:5px;
+  }
+  span {
+    color:#666;
+  }
+
+  
 `;
 
 export const showAnim = keyframes`
@@ -132,7 +150,7 @@ export const hideAnim = keyframes`
 `;
 
 export const Side = styled.div`
-  z-index: 99;
+  z-index: 999;
   margin: 0;
   padding: 0;
   width: 256px;
@@ -167,14 +185,13 @@ export const SideItem = styled.li`
   font-weight: bold;
   color: #2278b5;
   text-align: center;
-
   &:hover {
     background-color: #2278b5;
     color: white;
   }
 `;
 export const SideButton = styled.button`
-  z-index: 100;
+  z-index: 999;
   font-size: 32px;
   cursor: pointer;
   background-color: #f0f3f5;

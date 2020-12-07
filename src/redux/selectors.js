@@ -1,5 +1,6 @@
 export const selectCategories = (store) => store.categoryState.genres;
 export const selectSidebar = (store) => store.sidebarState.bIsSidebarShow;
+export const selectHeader = (store) => store.headerState.bIsDesktop;
 export const selectCurrentPage = (store) => store.listState.page;
 export const selectTotalPage = (store) => store.listState.totalPage;
 export const selectMovieLists = (store) => store.listState.movieLists;
@@ -18,3 +19,6 @@ export const selectListByGenre = (store) => {
     (item) => item.genre_ids.findIndex((i) => i === current) > -1
   );
 };
+
+export const selectSearchList = (store) => store.listState.searchList;
+export const selectSearchInput = (store) => store.listState.searchInput;

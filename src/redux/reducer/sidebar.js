@@ -1,19 +1,21 @@
-import {GET_SIDEBAR_VALUE} from '../actionConstants'
+import { SET_SIDEBAR_STATUS } from "../actionConstants";
 
 const initialState = {
-    bIsSidebarShow: true
-}
+  bIsSidebarShow: true,
+};
 
-const sideBar = (state = initialState, action) => {
-    switch (action.type) {
-        case GET_SIDEBAR_VALUE:
-            return {
-                ...state,
-                bIsSidebarShow: !action.payload.val            
-            }
-        default:
-            return state;
-    }
-}
+const sidebarReducer = (state = initialState, action) => {
+  switch (action.type) {
+    case SET_SIDEBAR_STATUS:
+      return {
+        ...state,
+        bIsSidebarShow: action.payload.platform_style
+          ? true
+          : !action.payload.sidebar_status,
+      };
+    default:
+      return state;
+  }
+};
 
-export default sideBar;
+export default sidebarReducer;

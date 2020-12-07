@@ -1,24 +1,18 @@
 import React from "react";
 import Searchbar from "./Searchbar";
 import Icon from "./Icon";
-import { selectSidebar } from "../redux/selectors";
-import { getSidebarStatus } from "../redux/actionCreators";
+import { selectHeader, selectSidebar } from "../redux/selectors";
+import { setSidebarStatus } from "../redux/actionCreators";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  Side,
-  SideList,
-  SideItem,
-  SideButton
-} from "../style/header";
+import { Side, SideList, SideItem, SideButton } from "../style/header";
 
 function Sidebar() {
-  // const opened = useSelector(selectSidebar);
-  // const dispatch = useDispatch();
-  const opened = useSelector(selectSidebar);
+  const sidebar_status = useSelector(selectSidebar);
+  const platform_style = useSelector(selectHeader);
   const dispatch = useDispatch();
   return (
     <div>
-      <Side className={opened ? "show" : "hide"}>
+      <Side className={sidebar_status ? "show" : "hide"}>
         <Icon className="side" />
         <Searchbar />
         <SideList>
@@ -27,7 +21,11 @@ function Sidebar() {
           <SideItem>Blocked List</SideItem>
         </SideList>
       </Side>
-      <SideButton onClick={() => dispatch(getSidebarStatus(opened))}>
+      <SideButton
+        onClick={() =>
+          dispatch(setSidebarStatus(sidebar_status, platform_style))
+        }
+      >
         ☰
       </SideButton>
     </div>
