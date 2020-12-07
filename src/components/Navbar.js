@@ -4,7 +4,7 @@ import { Nav, NavList, Up, Down, NavItem } from '../style/header';
 import Searchbar from '../components/Searchbar';
 import { Link } from 'react-router-dom';
 
-function Navbar() {
+const Navbar = () => {
     return (
         <Nav>
             <Up>

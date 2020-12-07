@@ -1,7 +1,5 @@
 import * as actionTypes from "../actionConstants";
 const initialState = {
-    isClickedBlockList: false,
-    isClickedLikeList: false,
     likeLists: [],
     blockLists: [],
     movieLists: [],
@@ -147,6 +145,12 @@ const listsState = (state = initialState, action) => {
                 blockLists: state.movieLists.filter(each => {
                     return each.isBlocked === true
                 })
+            }
+
+        case actionTypes.SET_TOTAL_PAGE:
+            return {
+                ...state,
+                totalPage: action.payload.totalPage
             }
 
         default:

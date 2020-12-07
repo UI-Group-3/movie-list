@@ -105,3 +105,10 @@ export const clickDisliked = (id) => ({
         id
     }
 })
+
+export const setTotalPage = (totalPage) => ({
+    type: actionTypes.SET_TOTAL_PAGE,
+    payload: {
+        totalPage
+    }
+})

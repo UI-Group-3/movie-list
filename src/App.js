@@ -11,17 +11,18 @@ import axios from 'axios';
 import { useDispatch, useSelector } from 'react-redux';
 import { GENRES_API, MOVIE_LIST_API } from './redux/actionConstants'
 import { getMovieGenres, getMovieList } from './redux/actionCreators';
-import { selectCategories, selectTotalPage, selectMovieLists } from './redux/selectors';
+import { selectCategories, selectMovieLists } from './redux/selectors';
 import { Close } from './style/moiveDetail';
 
 const App = () => {
-  const totalPage = useSelector(selectTotalPage);
+  const totalPage = 500;
   const dispatch = useDispatch();
+  let i = 0;
   useEffect(() => {
     axios.get(GENRES_API)
       .then(res => {
         dispatch(getMovieGenres(res.data.genres))
-
+        console.log(++i);
       })
       .catch(err => {
 
@@ -43,7 +44,7 @@ const App = () => {
       .catch((errors) => {
         console.log(errors)
       });
-  }, [dispatch, totalPage]
+  }, [dispatch]
 
   )
 
