@@ -131,3 +131,20 @@ export const handelSeachValue = (newSearchValue) => {
 export const setSearchNull = () => ({
   type: actionTypes.SET_SEARCH_INPUT_NULL,
 });
+
+export const handelOnFocus = () => ({
+  type: actionTypes.HANDEL_ON_FOCUS,
+})
+
+export const handelOnBlur = () => ({
+  type: actionTypes.HANDEL_ON_BLUR
+})
+
+export const handelMouseEnter = () => ({
+  type: actionTypes.MOUSE_ENTER
+})
+
+export const handelMouseLeave = () => ({
+  type: actionTypes.MOUSE_LEAVE
+})
+

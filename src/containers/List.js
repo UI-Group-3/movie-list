@@ -1,12 +1,10 @@
-import React, { Component, useRef } from "react";
+import React, { Component } from "react";
 import { connect } from "react-redux";
 import { ListWrapper } from '../style/ListStyle';
 import Sort from '../components/Sort';
 import * as actionCreators from '../redux/actionCreators';
 import Pagination from '../components/Pagination';
 import ListItem from '../components/ListItem';
-import useDimensions from "react-cool-dimensions";
-
 
 
 class List extends Component {
