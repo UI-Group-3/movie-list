@@ -9,7 +9,6 @@ const Sort = ({ sortBy, handleClickSort }) => {
           <SortItem key={item.id}>
             <label id={item.id}>
               <SortInput
-                id={item.id}
                 onClick={() => {
                   handleClickSort(item.id);
                 }}

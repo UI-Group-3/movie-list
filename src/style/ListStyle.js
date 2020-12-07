@@ -1,30 +1,30 @@
 import styled from "styled-components";
 
-export const ListWrapper = styled.div`
+export const ListWrapper = styled.article`
   overflow: hidden;
-  &.List{
+  &.List {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
   }
-  &.otherList{
+  &.otherList {
     display: flex;
     justify-content: flex-start;
-    flex-wrap: wrap; 
+    flex-wrap: wrap;
   }
   width: 1100px;
   margin: 0 auto;
   box-sizing: border-box;
 `;
 
-export const SortWrapper = styled.div`
+export const SortWrapper = styled.section`
   border-top: 1px solid #eee;
   width: 100%;
   color: #666;
   font-size: 14px;
 `;
 
-export const SortItem = styled.div`
+export const SortItem = styled.section`
   float: left;
   margin: 15px 20px 15px 0;
 `;
@@ -45,30 +45,30 @@ export const ItemWrapper = styled.div`
   box-sizing: border-box;
   width: 200px;
   height: 320px;
-  margin-right:20px;
-  margin-top:10px; 
+  margin-right: 20px;
+  margin-top: 10px;
 `;
 
 export const MovieImgs = styled.div`
-    position:relative;
+  position: relative;
+  width: 100%;
+  height: 80%;
+  img {
     width: 100%;
-    height: 80%;
-    img{
-        width:100%;
-        height:100%
+    height: 100%;
+  }
+  &:hover {
+    .ItemBottom {
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      bottom: 0;
+      width: 100%;
+      height: 20%;
+      background-color: rgba(240, 243, 245, 0.5);
     }
-    &:hover{
-        .ItemBottom {
-            position:absolute;
-            display:flex;
-            justify-content:center;
-            align-items:center;
-            bottom:0;
-            width:100%;
-            height:20%;
-            background-color: rgba(240,243,245,0.5) ;
-        }
-      }  
+  }
 `;
 
 export const MovieInfo = styled.p`
@@ -77,21 +77,21 @@ export const MovieInfo = styled.p`
 `;
 
 export const ItemBottomWrapper = styled.div`
-   display:none;
+  display: none;
 `;
 
 export const Liked = styled.button`
   margin-right: 25px;
   background: none;
-  border:none;
-  outline:none;  
+  border: none;
+  outline: none;
 `;
 
 export const Blocked = styled.button`
   float: left;
   background: none;
-  border:none;
-  outline:none; 
+  border: none;
+  outline: none;
   margin-right: 25px;
 `;
 
@@ -99,4 +99,3 @@ export const Details = styled.div`
   float: left;
   margin-right: 25px;
 `;
-

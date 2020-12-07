@@ -13,12 +13,13 @@ export const CategoryLabel = styled.label`
   margin: 0 10px 10px 0;
   box-sizing: border-box;
   font-size: 17px;
+  font-weight: 500;
   color: #666;
   border-radius: 2px;
   background: none;
   vertical-align: middle;
   &.active {
-    background: #4b8ccb;
+    background: #3270ae;
     color: #fff;
   }
   &.activeHover {
