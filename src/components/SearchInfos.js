@@ -2,13 +2,12 @@ import React from "react";
 import { selectSearchList } from '../redux/selectors'
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from 'react-router-dom';
-import { setItemDetailValue, setSearchNull } from '../redux/actionCreators';
+import { setItemDetailValue, setSearchNull, handelMouseEnter, handelMouseLeave } from '../redux/actionCreators';
 import { SearchItem, SearchInfo } from "../style/header";
 
 const SearchInfos = () => {
     const dispatch = useDispatch();
     const searchList = useSelector(selectSearchList);
-    console.log(searchList);
     const originalImg = "https://image.tmdb.org/t/p/original";
 
     function handelSeach(id) {
@@ -18,7 +17,8 @@ const SearchInfos = () => {
 
     return (
 
-        <SearchInfo >
+        <SearchInfo onMouseEnter={() => dispatch(handelMouseEnter())}
+            onMouseLeave={() => dispatch(handelMouseLeave())}  >
             {
                 searchList.map((item) => {
                     return (
