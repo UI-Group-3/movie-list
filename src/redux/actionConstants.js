@@ -21,5 +21,10 @@ export const GET_SIDEBAR_VALUE = "get_sidebar_value";
 
 export const SET_ITEM_DETAIL_VALUE = 'SET_ITEM_DETAIL_VALUE';
 
+export const SET_SEARCH_INPUT_NULL = 'SET_SEARCH_INPUT_NULL';
+
+
 export const GENRES_API = 'https://api.themoviedb.org/3/genre/movie/list?api_key=1a473a4b98e0d356ddaa4cf044b3bead&language=en-US';
 export const MOVIE_LIST_API = "https://api.themoviedb.org/3/movie/popular?api_key=1a473a4b98e0d356ddaa4cf044b3bead&language=en-US&page=";
+
+export const HANDEL_SEARCH_VALUE = 'HANDEL_SEARCH_VALUE';
