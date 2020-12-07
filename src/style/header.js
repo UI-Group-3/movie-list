@@ -150,7 +150,7 @@ export const hideAnim = keyframes`
 `;
 
 export const Side = styled.div`
-  z-index: 99;
+  z-index: 999;
   margin: 0;
   padding: 0;
   width: 256px;
@@ -191,7 +191,7 @@ export const SideItem = styled.li`
   }
 `;
 export const SideButton = styled.button`
-  z-index: 100;
+  z-index: 999;
   font-size: 32px;
   cursor: pointer;
   background-color: #f0f3f5;
