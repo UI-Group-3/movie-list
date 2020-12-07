@@ -16,6 +16,7 @@ export const SORT_MOVIE_LIST = "sort_movie_list";
 
 export const PREV_PAGE = "prev_page";
 export const NEXT_PAGE = "next_page";
+export const SET_TOTAL_PAGE = 'set_total_page';
 
 export const SET_SIDEBAR_STATUS = "set_sidebar_status";
 

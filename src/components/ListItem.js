@@ -1,12 +1,11 @@
 import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { ItemWrapper, MovieInfo, MovieImgs } from '../style/ListStyle';
 import ListItemBottom from './ListItemBottom';
-import {selectCurrentPage, selectBlockLists, selectLikeLists, selectListByGenre, } from '../redux/selectors';
+import { selectCurrentPage, selectBlockLists, selectLikeLists, selectListByGenre, } from '../redux/selectors';
 
 const ListItem = () => {
     const page = useSelector(selectCurrentPage);
-    const dispatch = useDispatch();
     const movieLists = useSelector(selectListByGenre);
     const movieLikeLists = useSelector(selectLikeLists);
     const movieBlockLists = useSelector(selectBlockLists);

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { StrictMode } from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
@@ -8,13 +8,13 @@ import { Headericon } from "./static/iconfont/iconfont";
 import { GlobalStyle } from "./style.js";
 
 ReactDOM.render(
-  <React.StrictMode>
+  <StrictMode>
     <Provider store={store}>
       <App />
       <Headericon />
     </Provider>
     <GlobalStyle />
-  </React.StrictMode>,
+  </StrictMode>,
   document.getElementById("root")
 );
 

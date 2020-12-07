@@ -6,10 +6,9 @@ import { useDispatch } from "react-redux";
 
 const Category = memo(({ genres_lists }) => {
   const dispatch = useDispatch();
-
   useEffect(() => {
     dispatch(setClickValue(1));
-  }, []);
+  }, [dispatch]);
 
   return (
     <CategoryDiv>
