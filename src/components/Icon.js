@@ -1,10 +1,10 @@
-import React from "react";
+import React, { memo } from "react";
 import icon from "../assets/images/TMDB-icon.svg";
 import { TMDBIcon } from "../style/header";
 import { useSelector } from "react-redux";
 import { selectHeader } from "../redux/selectors";
 
-function Icon() {
+const Icon = memo(() => {
   const bIsDesktop = useSelector(selectHeader);
 
   return (
@@ -14,6 +14,6 @@ function Icon() {
       className={bIsDesktop ? "top" : "side"}
     />
   );
-}
+})
 
 export default Icon;

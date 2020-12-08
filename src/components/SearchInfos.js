@@ -1,11 +1,11 @@
-import React from "react";
+import React, { memo } from "react";
 import { selectSearchList } from '../redux/selectors'
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from 'react-router-dom';
 import { setItemDetailValue, setSearchNull, handelMouseEnter, handelMouseLeave } from '../redux/actionCreators';
 import { SearchItem, SearchInfo } from "../style/header";
 
-const SearchInfos = () => {
+const SearchInfos = memo(() => {
     const dispatch = useDispatch();
     const searchList = useSelector(selectSearchList);
     const originalImg = "https://image.tmdb.org/t/p/original";
@@ -38,6 +38,6 @@ const SearchInfos = () => {
         </SearchInfo>
 
     );
-}
+})
 
 export default SearchInfos;

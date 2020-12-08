@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { ItemBottomWrapper, Liked, Blocked, Details } from '../style/ListStyle';
 import { Link } from 'react-router-dom';
 import { setBlockValue, clickLiked, addLikeList, setItemDetailValue, removeLikeList, addBlockList, removeBlockList } from '../redux/actionCreators';
 import { useDispatch } from 'react-redux';
 
-const ListItemBottom = ({ isLiked, movie, isBlocked }) => {
+const ListItemBottom = memo(({ isLiked, movie, isBlocked }) => {
     const dispatch = useDispatch();
     function handleClickLikeAndAddLikeMovie(movie) {
         if (window.location.pathname === "/") {
@@ -64,7 +64,7 @@ const ListItemBottom = ({ isLiked, movie, isBlocked }) => {
         </ItemBottomWrapper >
 
     )
-}
+})
 
 
 export default ListItemBottom;

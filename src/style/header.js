@@ -50,6 +50,10 @@ export const NavItem = styled.li`
     background-color: #3270ae;
     color: white;
   }
+  &.afterClick {
+    background: #2278b5;
+    color: white;
+  }
   @media (max-width: 1199px) {
     margin: 32px 0;
     text-align:center;

@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { RightWrapper, MoiveOverView, MoiveName } from '../style/moiveDetail';
 import DetailGenres from './RightGenres';
 
-const DetailRight = ({ itemDetail }) => {
+const DetailRight = memo(({ itemDetail }) => {
 
     return (
         <RightWrapper>
@@ -11,6 +11,6 @@ const DetailRight = ({ itemDetail }) => {
             <MoiveOverView>OverView:  {itemDetail[0].overview}</MoiveOverView>
         </RightWrapper>
     )
-}
+})
 
 export default DetailRight;

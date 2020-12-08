@@ -1,7 +1,7 @@
-import React from "react";
+import React, { memo } from "react";
 import { SortWrapper, SortItem, SortInput } from "../style/ListStyle";
 
-const Sort = ({ sortBy, handleClickSort }) => {
+const Sort = memo(({ sortBy, handleClickSort }) => {
   return (
     <SortWrapper>
       {sortBy.map((item) => {
@@ -18,14 +18,14 @@ const Sort = ({ sortBy, handleClickSort }) => {
               {item.isSort ? (
                 <i className="iconfont up">&#xe614;</i>
               ) : (
-                <i className="iconfont up">&#xe61d;</i>
-              )}
+                  <i className="iconfont up">&#xe61d;</i>
+                )}
             </label>
           </SortItem>
         );
       })}
     </SortWrapper>
   );
-};
+});
 
 export default Sort;

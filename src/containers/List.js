@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { PureComponent } from "react";
 import { connect } from "react-redux";
 import { ListWrapper } from '../style/ListStyle';
 import Sort from '../components/Sort';
@@ -7,7 +7,7 @@ import Pagination from '../components/Pagination';
 import ListItem from '../components/ListItem';
 
 
-class List extends Component {
+class List extends PureComponent {
     render() {
         const { sortBy, handleClickSort, movieLists, page, totalPage } = this.props;
         return (

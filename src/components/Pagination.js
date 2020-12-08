@@ -1,9 +1,9 @@
 import { PaginationWrapper, Button, PageInfo } from "../style/pagination";
-import React from "react";
+import React, { memo } from "react";
 import { useDispatch } from "react-redux";
 import { prevPage, nextPage } from "../redux/actionCreators";
 
-const Pagination = ({ page, totalPage }) => {
+const Pagination = memo(({ page, totalPage }) => {
   const dispatch = useDispatch();
   return (
     <PaginationWrapper>
@@ -24,6 +24,6 @@ const Pagination = ({ page, totalPage }) => {
       </Button>
     </PaginationWrapper>
   );
-};
+});
 
 export default Pagination;
