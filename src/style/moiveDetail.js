@@ -10,7 +10,7 @@ export const DetailWrapper = styled.div`
     height:70%;
     @media (min-width: 1199px) {
         width: 1100px;
-        height:500%
+        height:500px
       }
 `;
 

@@ -22,3 +22,6 @@ export const selectListByGenre = (store) => {
 
 export const selectSearchList = (store) => store.listState.searchList;
 export const selectSearchInput = (store) => store.listState.searchInput;
+
+export const selectOnFocused = (store) => store.listState.focused;
+export const selectOnMouseIn = (store) => store.listState.mouseIn;

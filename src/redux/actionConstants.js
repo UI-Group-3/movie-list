@@ -32,3 +32,9 @@ export const MOVIE_LIST_API =
   "https://api.themoviedb.org/3/movie/popular?api_key=1a473a4b98e0d356ddaa4cf044b3bead&language=en-US&page=";
 
 export const HANDEL_SEARCH_VALUE = "HANDEL_SEARCH_VALUE";
+
+export const HANDEL_ON_FOCUS = "HANDEL_ON_FOCUS";
+export const HANDEL_ON_BLUR = "HANDEL_ON_BLUR";
+
+export const MOUSE_ENTER = "MOUSE_ENTER";
+export const MOUSE_LEAVE = "MOUSE_LEAVE";

@@ -13,7 +13,10 @@ const initialState = {
         { id: 3, name: "Sort By Rating", isSort: true },
     ],
     itemDetail: [],
-    searchInput: ""
+    searchInput: "",
+    focused: false,
+    mouseIn: false
+
 };
 
 const listsState = (state = initialState, action) => {
@@ -174,6 +177,27 @@ const listsState = (state = initialState, action) => {
                 ...state,
                 totalPage: action.payload.totalPage
             }
+        case actionTypes.HANDEL_ON_FOCUS:
+            return {
+                ...state,
+                focused: true
+            }
+        case actionTypes.HANDEL_ON_BLUR:
+            return {
+                ...state,
+                focused: false,
+            }
+        case actionTypes.MOUSE_ENTER:
+            return {
+                ...state,
+                mouseIn: true,
+            }
+        case actionTypes.MOUSE_LEAVE:
+            return {
+                ...state,
+                mouseIn: false,
+            }
+
 
         default:
             return state;
