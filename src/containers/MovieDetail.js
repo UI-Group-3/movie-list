@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { DetailWrapper, Upper, LeftImg } from '../style/moiveDetail';
 import DetailRight from '../components/DetailRight';
 import { selectItemDetail } from '../redux/selectors'
@@ -6,7 +6,7 @@ import { useSelector } from 'react-redux';
 
 
 
-const MovieDetail = () => {
+const MovieDetail = memo(() => {
     const itemDetail = useSelector(selectItemDetail);
     const originalImg = "https://image.tmdb.org/t/p/original";
 
@@ -18,6 +18,6 @@ const MovieDetail = () => {
             </Upper>
         </DetailWrapper >
     )
-}
+})
 
 export default MovieDetail;

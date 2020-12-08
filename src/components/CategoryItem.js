@@ -1,6 +1,6 @@
 import { memo, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { CategoryLabel, CategoryInput } from "../style/jiayingZhou";
+import { CategoryLabel, CategoryInput } from "../style/categoryStyle";
 import { setClickValue, setTotalPage } from "../redux/actionCreators";
 import { selectListByGenre } from '../redux/selectors';
 

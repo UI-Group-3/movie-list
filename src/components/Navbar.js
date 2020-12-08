@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { memo } from 'react';
 import Icon from '../components/Icon';
 import { Nav, Up, Down, } from '../style/header';
 import Searchbar from '../components/Searchbar';
 import NavsList from './NavsList'
 
-const Navbar = () => {
+const Navbar = memo(() => {
     return (
         <Nav>
             <Up>
@@ -16,6 +16,6 @@ const Navbar = () => {
             </Down>
         </Nav>
     )
-}
+})
 
 export default Navbar;

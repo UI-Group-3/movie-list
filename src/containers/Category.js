@@ -1,6 +1,6 @@
 import React, { memo, useEffect } from "react";
 import CategoryItem from "../components/CategoryItem";
-import { CategoryDiv } from "../style/jiayingZhou";
+import { CategoryDiv } from "../style/categoryStyle";
 import { setClickValue } from "../redux/actionCreators";
 import { useDispatch } from "react-redux";
 

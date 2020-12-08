@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, memo } from 'react';
 import { BrowserRouter as Router, Route, } from 'react-router-dom'
 import Category from './containers/Category';
 import Header from './containers/Header';
@@ -14,7 +14,7 @@ import { getMovieGenres, getMovieList } from './redux/actionCreators';
 import { selectCategories, selectMovieLists } from './redux/selectors';
 import { Close } from './style/moiveDetail';
 
-const App = () => {
+const App = memo(() => {
   const totalPage = 500;
   const dispatch = useDispatch();
 
@@ -89,5 +89,5 @@ const App = () => {
 
     </div>
   )
-}
+})
 export default App;

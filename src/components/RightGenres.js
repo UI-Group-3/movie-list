@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { GenresWrapper, GenresItem } from '../style/moiveDetail';
 import { selectCategories } from '../redux/selectors'
 import { useSelector } from 'react-redux';
 
 
-const DetailGenres = ({ geners }) => {
+const DetailGenres = memo(({ geners }) => {
     const allCategories = useSelector(selectCategories);
     let list = []
     for (let i = 0; i < allCategories.length; i++) {
@@ -21,6 +21,6 @@ const DetailGenres = ({ geners }) => {
             )}
         </GenresWrapper>
     )
-}
+})
 
 export default DetailGenres;

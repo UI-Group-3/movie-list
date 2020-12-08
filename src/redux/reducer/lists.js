@@ -22,6 +22,7 @@ const initialState = {
 const listsState = (state = initialState, action) => {
     switch (action.type) {
         case actionTypes.CLICK_LIKED:
+
             return {
                 ...state,
                 movieLists: state.movieLists.map((each) => {

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import Searchbar from "./Searchbar";
 import Icon from "./Icon";
 import { selectHeader, selectSidebar } from "../redux/selectors";
@@ -7,7 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Side, SideButton } from "../style/header";
 import NavsList from './NavsList'
 
-function Sidebar() {
+const Sidebar = memo(() => {
   const sidebar_status = useSelector(selectSidebar);
   const platform_style = useSelector(selectHeader);
   const dispatch = useDispatch();
@@ -27,6 +27,6 @@ function Sidebar() {
       </SideButton>
     </div>
   );
-}
+})
 
 export default Sidebar;

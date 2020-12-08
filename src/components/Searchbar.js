@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import { Search, SearchText } from "../style/header";
 import { selectHeader } from "../redux/selectors";
 import { handelSeachValue, handelOnFocus, handelOnBlur } from "../redux/actionCreators";
@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import SearchInfos from "./SearchInfos";
 import { selectSearchInput, selectOnFocused, selectOnMouseIn } from "../redux/selectors";
 
-function Searchbar() {
+const Searchbar = memo(() => {
   const bIsDesktop = useSelector(selectHeader);
   const dispatch = useDispatch();
   const searchInput = useSelector(selectSearchInput);
@@ -29,6 +29,6 @@ function Searchbar() {
 
     </Search>
   );
-}
+})
 
 export default Searchbar;

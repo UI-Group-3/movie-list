@@ -1,11 +1,11 @@
-import React, { useEffect } from "react";
+import React, { memo, useEffect } from "react";
 import { useMediaQuery } from "react-responsive";
 import { useDispatch } from "react-redux";
 import Navbar from "../components/Navbar";
 import Sidebar from "../components/Sidebar";
 import { setPlatformStyle, setSidebarStatus } from "../redux/actionCreators";
 
-const Header = () => {
+const Header = memo(() => {
   const bIsDesktop = useMediaQuery({
     query: "(min-width: 1199px)",
   });
@@ -18,6 +18,6 @@ const Header = () => {
   }, [bIsDesktop, dispatch]);
 
   return <div>{bIsDesktop ? <Navbar /> : <Sidebar />}</div>;
-};
+});
 
 export default Header;

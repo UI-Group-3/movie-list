@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, memo } from 'react';
 import { NavList, NavItem } from '../style/header';
 import { Link } from 'react-router-dom';
 import { selectSidebar } from "../redux/selectors";
 import { useSelector } from "react-redux";
 
 
-const NavsList = () => {
+const NavsList = memo(() => {
     const sidebar_status = useSelector(selectSidebar);
     const initState = {
         movieClick: true,
@@ -52,6 +52,6 @@ const NavsList = () => {
 
         </NavList>
     )
-}
+})
 
 export default NavsList;
