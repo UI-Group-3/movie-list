@@ -37,7 +37,7 @@ export const NavList = styled.ul`
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-}
+  }
 `;
 export const NavItem = styled.li`
   float: left;
@@ -55,9 +55,10 @@ export const NavItem = styled.li`
     color: white;
   }
   @media (max-width: 1199px) {
+    width: 150px;
     margin: 32px 0;
-    text-align:center;
-}
+    text-align: center;
+  }
 `;
 
 export const TMDBIcon = styled.img`
